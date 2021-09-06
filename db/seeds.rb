@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "date"
+# anja = User.first
+puts "seeding has begun"
+anja = User.create(first_name: "Anja", last_name: "Drayton", email: "text@email.com", password: "secret")
+ruby = Topic.create(name: "Ruby")
+loops = Deck.create(name: "Loops", topic: ruby)
+multi = QuestionType.create(name: "multiple-choice", instruction: "select the best answer")
+card = Flashcard.create(question: "whats a loop?", answer: "a thingo", question_type: multi, deck: loops)
+try = Attempt.create(user: anja, flashcard: card, attempt: DateTime.now, attempt_correct: true)
+puts "seeding has finished"

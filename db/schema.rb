@@ -10,10 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_06_013159) do
+ActiveRecord::Schema.define(version: 2021_09_06_035527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attempts", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "flashcard_id", null: false
+    t.datetime "attempted"
+    t.boolean "attempt_correct"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["flashcard_id"], name: "index_attempts_on_flashcard_id"
+    t.index ["user_id"], name: "index_attempts_on_user_id"
+  end
+
+  create_table "decks", force: :cascade do |t|
+    t.string "name"
+    t.bigint "topic_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["topic_id"], name: "index_decks_on_topic_id"
+  end
+
+  create_table "flashcards", force: :cascade do |t|
+    t.text "question"
+    t.text "answer"
+    t.bigint "question_type_id", null: false
+    t.bigint "deck_id", null: false
+    t.text "choice1"
+    t.text "choice2"
+    t.text "choice3"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["deck_id"], name: "index_flashcards_on_deck_id"
+    t.index ["question_type_id"], name: "index_flashcards_on_question_type_id"
+  end
+
+  create_table "question_types", force: :cascade do |t|
+    t.string "name"
+    t.text "instruction"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +69,15 @@ ActiveRecord::Schema.define(version: 2021_09_06_013159) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "attempts", "flashcards"
+  add_foreign_key "attempts", "users"
+  add_foreign_key "decks", "topics"
+  add_foreign_key "flashcards", "decks"
+  add_foreign_key "flashcards", "question_types"
 end
