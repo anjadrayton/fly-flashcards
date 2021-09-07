@@ -1,1 +1,16 @@
 // Specific CSS for your home-page
+.home {
+  background: asset-url("journey6.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+
+.purple {
+    position: absolute;
+    bottom: 183px;
+    left: 34%;
+    width: 99px;
+    background-color: #d69fff;
+    border-color: #d69fff;
+    border-radius: 30px;
+}

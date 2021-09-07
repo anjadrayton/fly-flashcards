@@ -13,5 +13,5 @@ ruby = Topic.create(name: "Ruby")
 loops = Deck.create(name: "Loops", topic: ruby)
 multi = QuestionType.create(name: "multiple-choice", instruction: "select the best answer")
 card = Flashcard.create(question: "whats a loop?", answer: "a thingo", question_type: multi, deck: loops)
-try = Attempt.create(user: anja, flashcard: card, attempt: DateTime.now, attempt_correct: true)
+try = Attempt.create(user: anja, flashcard: card, attempted: DateTime.now, attempt_correct: true)
 puts "seeding has finished"
