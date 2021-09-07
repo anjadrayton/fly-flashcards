@@ -13,9 +13,17 @@ ruby = Topic.create(name: "Ruby")
 loops = Deck.create(name: "Loops", topic: ruby)
 multi = QuestionType.create(name: "multiple-choice", instruction: "select the best answer")
 card = Flashcard.create(question: "whats a loop?", answer: "a thingo", question_type: multi, deck: loops)
+
 try = Attempt.create(user: anja, flashcard: card, attempted: DateTime.now, attempt_correct: true)
 js = Topic.create(name:"js")
 plugins = Deck.create(name: "plugins", topic: js)
 bootstrap = Deck.create(name: "bootstrap", topic: js)
 hash = Deck.create(name: "hash", topic: ruby)
+
+card2 = Flashcard.create(question: "whats a test?", answer: "testtest", question_type: multi, deck: loops)
+card3 = Flashcard.create(question: "this is a test?", answer: "testytesttest", question_type: multi, deck: loops)
+Attempt.create(user: anja, flashcard: card, attempted: DateTime.now, attempt_correct: false)
+Attempt.create(user: anja, flashcard: card2, attempted: DateTime.now, attempt_correct: false)
+Attempt.create(user: anja, flashcard: card3, attempted: DateTime.now, attempt_correct: true)
+
 puts "seeding has finished"
