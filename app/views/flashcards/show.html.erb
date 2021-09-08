@@ -1,0 +1,34 @@
+<div class="container">
+  <h1><%= @deck.name %></h1>
+
+  <p><%= @flashcard.question %> (Question <%= @question_number %> out of <%= @deck.flashcards.count %>)</p>
+
+  <% if params[:display] != 'result' %>
+    <% if @type.name = 'multiple-choice' %>
+      <%= simple_form_for [@deck, @flashcard], url: deck_flashcard_attempts_path(@deck, @flashcard), method: :post do |f| %>
+        <%= f.input :answer, as: :radio_buttons, collection: @options, checked: @options.first %>
+        <%= f.submit "Submit Answer", class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <br>
+  <% if params[:display] == 'result' %>
+    <h3>Your Submission</h3>
+    <p><%= @submission %></p>
+    <h3>Correct Answer</h3>
+    <p><%= @flashcard.answer %></p>
+
+    <p>Your answer was <%= @flashcard.attempt.attempt_correct ? "correct" : 'incorrect' %>.</p>
+
+    <% if @wrong_attempts >= 2 %>
+      <h2>Game Over</h2>
+      <%= link_to 'Restart Deck', deck_flashcard_path(@deck, @deck.flashcards.first) %>
+    <% else %>
+      <% if @next_question_index < @deck_card_count %>
+        <%= link_to 'Next Question', deck_flashcard_path(@deck, @deck.flashcards[@next_question_index]) %>
+      <% else %>
+        <%= link_to 'Deck results', deck_path(@deck) %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
