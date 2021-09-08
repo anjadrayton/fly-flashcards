@@ -12,6 +12,10 @@ anja = User.create(first_name: "Anja", last_name: "Drayton", email: "text@email.
 ruby = Topic.create(name: "Ruby")
 loops = Deck.create(name: "Loops", topic: ruby)
 multi = QuestionType.create(name: "multiple-choice", instruction: "select the best answer")
-card = Flashcard.create(question: "whats a loop?", answer: "a thingo", question_type: multi, deck: loops)
-try = Attempt.create(user: anja, flashcard: card, attempt: DateTime.now, attempt_correct: true)
+card1 = Flashcard.create(question: "Flashcard 1 question?", answer: "F1 correct answer", question_type: multi, deck: loops, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
+card2 = Flashcard.create(question: "Flashcard 2 question?", answer: "F2 correct answer", question_type: multi, deck: loops, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
+card3 = Flashcard.create(question: "Flashcard 3 question?", answer: "F3 correct answer", question_type: multi, deck: loops, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
+card4 = Flashcard.create(question: "Flashcard 4 question?", answer: "F4 correct answer", question_type: multi, deck: loops, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
+card5 = Flashcard.create(question: "Flashcard 5 question?", answer: "F5 correct answer", question_type: multi, deck: loops, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
+# try = Attempt.create(user: anja, flashcard: card, attempted: DateTime.now, attempt_correct: true)
 puts "seeding has finished"
