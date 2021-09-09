@@ -120,7 +120,10 @@
       <% if @next_question_index < @deck_card_count %>
         <%= link_to 'Next Question', deck_flashcard_path(@deck, @deck.flashcards[@next_question_index]) %>
       <% else %>
-        <%= link_to 'Deck results', deck_path(@deck) %>
+      <% content_for(:body_attributes) do %>
+        data-turbolinks="false"
+      <% end %>
+        <%= link_to 'Deck results', deck_path(@deck), data: {turbolinks: false} %>
       <% end %>
     <% end %>
   <% end %>
