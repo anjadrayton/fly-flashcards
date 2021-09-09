@@ -5,7 +5,7 @@
     <div class="card-header" id=<% index %>>
       <h2 class="mb-0">
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-item<%= index %>" aria-expanded="true" aria-controls="collapseOne">
-          <p>Topic: <%= topic.name %><br></p>
+        <%= image_tag topic.name.split(" ").map(&:downcase).join("_") %>
         </button>
       </h2>
     </div>
