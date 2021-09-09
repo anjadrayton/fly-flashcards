@@ -1,20 +1,78 @@
-<h2>⭐️Deck Complete⭐️</h2>
-<br>
-<div class="container">
-  <h4> <%= @score %> Cards Correct</h4>
-  <br>
-  <button class = "btn pill">Repeat Deck</button>
-  <button class = "btn pill">Choose Deck</button>
-  <br>
-  <br>
-  <% if @review.count > 0 %>
-    <h4>Areas to Review</h4>
-    <table>
-      <% @review.each do |card| %>
-        <tr>
-          <td> <%= card.question %> </td>
-        </tr>
-      <% end %>
-    </table>
-  <% end %>
-</div>
+<div class="scene-lg">
+
+  <div class="show-info">
+    <h4 class = "main-title"> <%= @score %> Cards Correct</h4>
+    <br>
+    <%= link_to "Repeat Deck", deck_flashcard_path(@deck, @deck.flashcards.first), class: "btn pill" %>
+    <%= link_to "New Decks", topics_path, class: "btn pill" %>
+    <%# <button class = "btn pill">Repeat Deck</button>
+    <button class = "btn pill">Choose Deck</button> %>
+    <br>
+    <br>
+  </div>
+  <div class = 'review'>
+    <% if @review.count > 0 %>
+      <h4>Areas to Review</h4>
+      <table>
+        <% @review.each do |card| %>
+          <tr>
+            <td> <%= card.question %> </td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+  </div>
+
+
+    <i class = "star first_still"><%= image_tag 'sparkle.png', style: "width: 20px;"%></i>
+    <i class = "star second_still"><%= image_tag 'sparkle.png', style: "width: 20px;"%></i>
+    <i class = "star third_still"><%= image_tag 'sparkle.png', style: "width: 20px;"%></i>
+    <i class = "star fourth_still"><%= image_tag 'sparkle.png', style: "width: 20px;"%></i>
+    <i class = "star fifth_still"><%= image_tag 'sparkle.png', style: "width: 20px;"%></i>
+    <i class = "star sixth_still"><%= image_tag 'sparkle.png', style: "width: 20px;"%></i>
+    <i class = "star seventh_still"><%= image_tag 'sparkle.png', style: "width: 20px;"%></i>
+    <i class = "star eigth_still"><%= image_tag 'sparkle.png', style: "width: 20px;"%></i>
+    <%# <i class = "star ninth_still"><%= image_tag 'sparkle.png', style: "width: 20px;"%>
+    <i class = "star tenth_still"><%= image_tag 'sparkle.png', style: "width: 20px;"%></i>
+    <!-- <img class = "astroid one"src="astroid.png" alt="astroid">
+      <img class="astroid two" src="astroid.png" alt="astroid"> -->
+    <!-- <style>
+      @keyframes move {
+
+        110% {
+          transform: translate(0)
+        }
+
+        0% {
+          transform: translate(300px)
+        }
+      }
+    </style> -->
+    <!-- <div id="axis" class="five">
+      <img class="astroid object plane move-ne" src="astroid.png" alt="star">
+    </div> -->
+    <!-- <img class="explosion" src="explosion.png" alt="boom"> -->
+    <!-- <div id="axis" class="box">
+      <img class="astroid2 object plane move-ne" src="astroid.png" alt="star">
+    </div> -->
+    <div id="axis" class="four">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1" viewbox="0 0 741 1255" width="100" height="120" class="rocket-lg move-down">
+        <path fill="#1560d6"
+          d="M565 728c-6 68-15 130-29 186 88 38 156 106 187 188 12-32 18-65 18-100 0-116-70-217-176-274zM265 1020l8 25h194l9-25H265z" />
+        <path fill="#e83d37" d="M210 937c8 30 17 58 26 83h269c9-25 18-53 26-83H210z" />
+        <path fill="#1560d6"
+          d="M0 1002c0 35 6 68 18 100 31-82 99-150 187-188-14-55-23-118-29-186A314 314 0 0 0 0 1002z" />
+        <path fill="#DFE3E5"
+          d="M571 585c0-125-30-241-67-337a395 395 0 0 1-270 0c-36 94-64 209-64 337a1658 1658 0 0 0 34 329l6 23h321l5-23a1313 1313 0 0 0 35-329z" />
+        <circle fill="#B8BDBF" cx="370" cy="481" r="100" />
+        <path fill="#ead3b0" d="M455 481a85 85 0 1 1-170 0 85 85 0 0 1 170 0z" />
+        <path fill="#1560d6" d="M234 248a394 394 0 0 0 270 0C446 98 370 0 370 0c-9 10-81 104-136 248z" />
+      </svg>
+    </div>
+      <!-- <img class="object coin move-down" src="images/coin.png" /> -->
+      <%# <img class = "earth" src="app/assets/images/earth.png" alt="planet"> %>
+      <i class = "earth"><%= image_tag 'earth.png', style: "width: 700px;"%></i>
+  </div>
+
+<%# <h2>⭐️Deck Complete⭐️</h2>
+<br> %>
