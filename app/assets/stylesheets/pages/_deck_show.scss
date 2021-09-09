@@ -193,16 +193,16 @@
 } */
 
 
-.explosion {
-    width: 200px;
-    position: absolute;
-    top: 28%;
-    z-index: 1;
-    visibility: hidden;
-    left: 18%;
-    animation: show 0s ease-in 4s;
-    animation-fill-mode: forwards;
-}
+// .explosion {
+//     width: 200px;
+//     position: absolute;
+//     top: 28%;
+//     z-index: 1;
+//     visibility: hidden;
+//     left: 18%;
+//     animation: show 0s ease-in 4s;
+//     animation-fill-mode: forwards;
+// }
 
 @keyframes show {
   to {
