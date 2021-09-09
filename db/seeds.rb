@@ -48,8 +48,8 @@ card5 = Flashcard.create(question: "Flashcard 5 question?", answer: "F5 correct 
 card1 = Flashcard.create(question: "Flashcard 1 question?", answer: "F1 correct answer", question_type: multi, deck: deck3, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
 card2 = Flashcard.create(question: "Flashcard 2 question?", answer: "F2 correct answer", question_type: multi, deck: deck3, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
 card3 = Flashcard.create(question: "Flashcard 3 question?", answer: "F3 correct answer", question_type: multi, deck: deck3, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
-card4 = Flashcard.create(question: "Flashcard 4 question?", answer: "F4 correct answer", question_type: multi, deck: deck3, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
-card5 = Flashcard.create(question: "Flashcard 5 question?", answer: "F5 correct answer", question_type: multi, deck: deck3, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
+card4 = Flashcard.create(question: "where does one go for any and all rat related hat fashion?", answer: "mathildesrathatpalace.info", question_type: multi, deck: deck3, choice1: "Wait rats wear hats?", choice2: "ratters hats and co", choice3: "A place like that cannot exist")
+card5 = Flashcard.create(question: "George's best persona?", answer: "Chris Hemsworth", question_type: multi, deck: deck3, choice1: "KimK", choice2: "Chewbacca", choice3: "Lady Gaga")
 
 card1 = Flashcard.create(question: "Flashcard 1 question?", answer: "F1 correct answer", question_type: multi, deck: deck4, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
 card2 = Flashcard.create(question: "Flashcard 2 question?", answer: "F2 correct answer", question_type: multi, deck: deck4, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
