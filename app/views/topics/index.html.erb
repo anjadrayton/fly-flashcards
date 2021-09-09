@@ -13,7 +13,7 @@
     <div id="accordion-item<%= index %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
         <% Deck.where(topic: topic).each do |deck| %>
-       <%= link_to deck.name, deck_flashcard_path(deck, 1)%><br>
+       <%= link_to deck.name, deck_flashcard_path(deck, deck.flashcards.first)%><br>
        <%# link not working %>
        <%# <p>Deck: <%= deck.name<br></p> %>
         <% end %>
