@@ -60,15 +60,16 @@
 <% end %>
 <br>
 <div class="container">
+  <% if params[:display] != 'result' %>
   <h1><%= @deck.name %></h1>
 
   <p><%= @flashcard.question %> (Question <%= @question_number %> out of <%= @deck.flashcards.count %>)</p>
   <p><%= @type.instruction %></p>
   <%= hidden_field_tag "question_type", @flashcard.question_type.name, { id: "question-type" } %>
 
-  <% if params[:display] != 'result' %>
     <% if @type.name == 'multiple-choice' %>
       <%= simple_form_for [@deck, @flashcard], url: deck_flashcard_attempts_path(@deck, @flashcard), method: :post do |f| %>
+        <%# <%= f.input :answer, as: :buttons, collection: @options, checked: @options.first %>
         <%= f.input :answer, as: :radio_buttons, collection: @options, checked: @options.first %>
         <%= f.submit "Submit Answer", class: "btn btn-primary" %>
       <% end %>
@@ -87,8 +88,9 @@
 
     <% end %>
   <% end %>
-  <br>
+  <div class = "results-info">
   <% if params[:display] == 'result' %>
+    <p>Your answer was <%= @flashcard.attempt.attempt_correct ? "correct" : 'incorrect' %>.</p>
     <% if @type.name == 'multiple-choice' %>
       <h3>Your Submission</h3>
       <p><%= @submission %></p>
@@ -111,20 +113,20 @@
       </div>
     <% end %>
 
-    <p>Your answer was <%= @flashcard.attempt.attempt_correct ? "correct" : 'incorrect' %>.</p>
 
     <% if @wrong_attempts >= 2 %>
-      <h2>Game Over</h2>
-      <%= link_to 'Restart Deck', deck_flashcard_path(@deck, @deck.flashcards.first) %>
+      <p>Better Luck Next Time</p>
+      <button class = "btn pill text-white"><%= link_to 'Restart Deck', deck_flashcard_path(@deck, @deck.flashcards.first) %></button>
     <% else %>
       <% if @next_question_index < @deck_card_count %>
-        <%= link_to 'Next Question', deck_flashcard_path(@deck, @deck.flashcards[@next_question_index]) %>
+        <button class = "btn pill text-white"><%= link_to 'Next Question', deck_flashcard_path(@deck, @deck.flashcards[@next_question_index]) %></button>
       <% else %>
       <% content_for(:body_attributes) do %>
         data-turbolinks="false"
       <% end %>
-        <%= link_to 'Deck results', deck_path(@deck), data: {turbolinks: false} %>
+        <button class = "btn pill text-white"><%= link_to 'Deck results', deck_path(@deck), data: {turbolinks: false} %></button>
       <% end %>
     <% end %>
   <% end %>
+  </div>
 </div>

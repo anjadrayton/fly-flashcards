@@ -218,8 +218,12 @@
 }
 
 #axis .move-down {
-    transform: translate(0,350px);
-    -webkit-transform: translate(0,350px);
+  -webkit-transform: translate(0,350px);
+  -ms-transform: translateY(0,350px);
+  -webkit-transform: translateY(0,350px);
+  -moz-transform: translateY(0,350px);
+  -o-transform: translateY(0,350px);
+  transform: translate(0,350px);
 }
 
 .show-info {

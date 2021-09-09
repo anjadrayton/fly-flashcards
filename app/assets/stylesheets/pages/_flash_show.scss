@@ -11,6 +11,7 @@
   width: 293px;
   margin: auto;
   position: relative;
+  border-radius: 20px;
 }
 
 .star {
@@ -137,7 +138,10 @@
   }
 }
 
-
+.results-info {
+  width: auto;
+  margin-left: 37px;
+}
 
 // @keyframes astroid2 {
 //   0% {
@@ -148,3 +152,7 @@
 //     transform: translate(240px, -266px);
 //   }
 // }
+
+a {
+  color:#212121;
+}
