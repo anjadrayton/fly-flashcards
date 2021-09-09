@@ -6,20 +6,28 @@ class FlashcardsController < ApplicationController
     @deck_card_count = @deck.flashcards.count
     @question_number = @deck.flashcards.find_index(@flashcard) + 1
 
-    #clear attempts
+    # clear attempts
     if @flashcard == @deck.flashcards.first && params[:display] != 'result'
       @deck.flashcards.each do |flashcard|
         flashcard.attempt.destroy if flashcard.attempt
       end
     end
 
-    #set up question
+    # set up question
     if @type.name == 'multiple-choice'
       @options = [@flashcard.answer, @flashcard.choice1, @flashcard.choice2, @flashcard.choice3].sample(4)
+    elsif @type.name == 'sort'
+      @options = [@flashcard.sort1, @flashcard.sort2, @flashcard.sort3, @flashcard.sort4].sample(4)
     end
 
     if params[:display] == 'result'
       @submission = @flashcard.attempt.submission
+
+      if @type.name == 'sort'
+        @submission_array = @submission.split('~')
+        @answer_array = @flashcard.answer.split('~')
+      end
+
       # how many wrong answers so far?
       @wrong_attempts = 0
       @deck.flashcards.each do |flashcard|

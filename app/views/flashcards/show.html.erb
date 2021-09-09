@@ -2,21 +2,53 @@
   <h1><%= @deck.name %></h1>
 
   <p><%= @flashcard.question %> (Question <%= @question_number %> out of <%= @deck.flashcards.count %>)</p>
+  <p><%= @type.instruction %></p>
+  <%= hidden_field_tag "question_type", @flashcard.question_type.name, { id: "question-type" } %>
 
   <% if params[:display] != 'result' %>
-    <% if @type.name = 'multiple-choice' %>
+    <% if @type.name == 'multiple-choice' %>
       <%= simple_form_for [@deck, @flashcard], url: deck_flashcard_attempts_path(@deck, @flashcard), method: :post do |f| %>
         <%= f.input :answer, as: :radio_buttons, collection: @options, checked: @options.first %>
         <%= f.submit "Submit Answer", class: "btn btn-primary" %>
       <% end %>
     <% end %>
+
+    <% if @type.name == 'sort' %>
+      <%= simple_form_for [@deck, @flashcard], html: {id: 'sort-form'}, url: deck_flashcard_attempts_path(@deck, @flashcard), method: :post do |f| %>
+        <div id="sort-options" class="list-group col">
+          <% @options.each do |option| %>
+            <div class="list-group-item"><%= option %></div>
+          <% end %>
+        </div>
+        <input type="hidden" id="current_order"  name="current_order" value="" />
+        <%= f.submit "Submit Answer", class: "btn btn-primary" %>
+      <% end %>
+
+    <% end %>
   <% end %>
   <br>
   <% if params[:display] == 'result' %>
-    <h3>Your Submission</h3>
-    <p><%= @submission %></p>
-    <h3>Correct Answer</h3>
-    <p><%= @flashcard.answer %></p>
+    <% if @type.name == 'multiple-choice' %>
+      <h3>Your Submission</h3>
+      <p><%= @submission %></p>
+      <h3>Correct Answer</h3>
+      <p><%= @flashcard.answer %></p>
+    <% end %>
+
+    <% if @type.name == 'sort' %>
+      <h3>Your Submission</h3>
+      <div class="list-group col">
+        <% @submission_array.each do |submission_line| %>
+          <div class="list-group-item"><%= submission_line %></div>
+        <% end %>
+      </div>
+      <h3>Correct Answer</h3>
+      <div class="list-group col">
+        <% @answer_array.each do |answer_line| %>
+          <div class="list-group-item"><%= answer_line %></div>
+        <% end %>
+      </div>
+    <% end %>
 
     <p>Your answer was <%= @flashcard.attempt.attempt_correct ? "correct" : 'incorrect' %>.</p>
 
