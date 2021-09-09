@@ -2,7 +2,12 @@ class AttemptsController < ApplicationController
   def create
     @deck = Deck.find(params['deck_id'])
     @flashcard = Flashcard.find(params['flashcard_id'])
-    @submission = params['flashcard']['answer']
+    if @flashcard.question_type.name == 'multiple-choice'
+      @submission = params['flashcard']['answer']
+    elsif @flashcard.question_type.name == 'sort'
+      @submission = params["current_order"]
+    end
+
     @correct_answer = @flashcard.answer
 
     if @flashcard.attempt

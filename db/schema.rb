@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_07_024147) do
+ActiveRecord::Schema.define(version: 2021_09_08_232312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,10 @@ ActiveRecord::Schema.define(version: 2021_09_07_024147) do
     t.text "choice3"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "sort1"
+    t.string "sort2"
+    t.string "sort3"
+    t.string "sort4"
     t.index ["deck_id"], name: "index_flashcards_on_deck_id"
     t.index ["question_type_id"], name: "index_flashcards_on_question_type_id"
   end

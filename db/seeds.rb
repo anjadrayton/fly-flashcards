@@ -10,6 +10,7 @@ require "date"
 puts "seeding has begun"
 anja = User.create(first_name: "Anja", last_name: "Drayton", email: "text@email.com", password: "secret")
 multi = QuestionType.create(name: "multiple-choice", instruction: "select the best answer")
+sort = QuestionType.create(name: "sort", instruction: "Sort the code into the correct order.")
 
 topic1 = Topic.create(name: "Ruby")
 topic2 = Topic.create(name: "Object Oriented Programming")
@@ -39,7 +40,7 @@ card3 = Flashcard.create(question: "How can you tell if a key is present in a Ha
 card4 = Flashcard.create(question: "where does one go for any and all rat related hat fashion", answer: "mathildesrathatpalace.info", question_type: multi, deck: deck1, choice1: "Wait rats wear hats?", choice2: "ratters hats and co", choice3: "A place like that cannot exist")
 card5 = Flashcard.create(question: "George's best persona?", answer: "Chris Hemsworth", question_type: multi, deck: deck1, choice1: "KimK", choice2: "Chewbacca", choice3: "Lady Gaga")
 
-card1 = Flashcard.create(question: "Flashcard 1 question?", answer: "F1 correct answer", question_type: multi, deck: deck2, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
+card1 = Flashcard.create(question: "Flashcard 1 question?", answer: "line 1~line 2~line 3~line 4", question_type: sort, deck: loops, sort1: "line 1", sort2: "line 2", sort3: "line 3", sort4: "line 4")
 card2 = Flashcard.create(question: "Flashcard 2 question?", answer: "F2 correct answer", question_type: multi, deck: deck2, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
 card3 = Flashcard.create(question: "Flashcard 3 question?", answer: "F3 correct answer", question_type: multi, deck: deck2, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
 card4 = Flashcard.create(question: "Flashcard 4 question?", answer: "F4 correct answer", question_type: multi, deck: deck2, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
