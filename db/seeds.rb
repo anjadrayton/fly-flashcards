@@ -9,8 +9,8 @@ require "date"
 # anja = User.first
 puts "seeding has begun"
 anja = User.create(first_name: "Anja", last_name: "Drayton", email: "text@email.com", password: "secret")
-multi = QuestionType.create(name: "multiple-choice", instruction: "select the best answer")
-sort = QuestionType.create(name: "sort", instruction: "Sort the code into the correct order.")
+multi = QuestionType.create(name: "multiple-choice", instruction: "Select the best answer.")
+sort = QuestionType.create(name: "sort", instruction: "Sort the lines into the correct order.")
 
 topic1 = Topic.create(name: "Ruby")
 topic2 = Topic.create(name: "Object Oriented Programming")
