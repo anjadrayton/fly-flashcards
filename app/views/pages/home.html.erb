@@ -1,4 +1,9 @@
-<div class = home>
+<% if @completed %>
+  <div class = "home2">
+<% else %>
+  <div class = "home1">
+<% end %>
+
 <%# <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p> %>
 </div>
