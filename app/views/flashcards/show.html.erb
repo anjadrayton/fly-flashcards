@@ -1,4 +1,5 @@
-<div class="top">
+<div id ="top">
+
   <% if params[:display] == 'result' %>
     <% if @wrong_attempts >= 2 %>
       <div class="scene-lg-move">
@@ -153,9 +154,9 @@
     <% end %>
     <div class = "results-info">
     <% if params[:display] == 'result' %>
-      <p>Your answer was <%= @flashcard.attempt.attempt_correct ? "correct" : 'incorrect' %>.</p>
+      <p class= "text-pill">Your answer was <%= @flashcard.attempt.attempt_correct ? "correct" : 'incorrect' %></p>
       <% if @type.name == 'multiple-choice' %>
-        <h3>Your Submission</h3>
+        <h3>Your Answer</h3>
         <p><%= @submission %></p>
         <h3>Correct Answer</h3>
         <p><%= @flashcard.answer %></p>
@@ -184,9 +185,9 @@
         <% if @next_question_index < @deck_card_count %>
           <button class = "btn pill text-white"><%= link_to 'Next Question', deck_flashcard_path(@deck, @deck.flashcards[@next_question_index]) %></button>
         <% else %>
-        <% content_for(:body_attributes) do %>
-          data-turbolinks="false"
-        <% end %>
+        <%# content_for(:body_attributes) do %>
+          <%# data-turbolinks="false" %>
+        <%# end %>
           <button class = "btn pill text-white"><%= link_to 'Deck results', deck_path(@deck), data: {turbolinks: false} %></button>
         <% end %>
       <% end %>
@@ -194,3 +195,13 @@
     </div>
   </div>
 </div>
+
+
+<script>
+  console.log("working")
+  section = document.querySelector('top')
+  setTimeout(function() {
+  //your code to be executed after 1 second
+    section.style.visibility='hidden'
+  }, 7000);
+</script>

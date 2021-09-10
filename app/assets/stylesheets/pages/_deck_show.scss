@@ -2,8 +2,11 @@
   position: absolute;
   transition: all 3s ease-in-out;
   top: -47px;
-  /* top: 36%; */
   left: 34%;
+
+
+  // top: 36%;
+  //   left: 0px;
 }
 
 .star {
@@ -17,6 +20,7 @@
 .scene-lg {
   background-color: rgb(29, 29, 111);
   height: 100vh;
+  bottom: 16px;
 
   /* width: 293px; */
   /* margin: auto; */

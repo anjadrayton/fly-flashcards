@@ -3,6 +3,8 @@
   position: absolute;
   top: 25%;
   left: 40%;
+  // top: 25%;
+  // left: 40%;
 }
 
 .scene {
@@ -165,12 +167,26 @@ a {
 
 // explosion cut scene
 
-.top {
+#top {
   z-index: 2;
   position: absolute;
   width: 100%;
-  visibility: hidden;
+  top: 0px;
+  animation: hide-scene 1s ease 8s both
+  // visibility: hidden;
 }
+
+@keyframes hide-scene {
+  0% {
+    visibility: visible;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
+
+
 .rocket-lg-move {
   position: absolute;
   transform: rotate(90deg);
@@ -311,10 +327,14 @@ a {
   position: absolute;
     top: -45px;
     right: -2px;
+    // top: 70px;
+    // top: -322px;
+
+    // right: 235px;
     transform: translate(14px, -70px);
     /* -webkit-transform: translate(-350px, 350px); */
     z-index: 1;
-    animation: 2s astroid-l 2s linear running;
+    animation: 2s astroidl 2s linear running;
     /* animation-delay: 5s; */
 }
 .box {
@@ -326,20 +346,34 @@ a {
     /* transform: translate(-180px, 21px); */
     /* -webkit-transform: translate(-350px, 350px); */
     z-index: 1;
-    animation: 2s astroid-l2 1s linear running;
+    animation: 2s astroidl2 1s linear running;
     /* animation-delay: 5s; */
 }
 
-@keyframes astroid-l {
+// @keyframes astroid-l {
+//   0% {
+//     transform: translate(97px, -64px);
+//   }
+//   100% {
+//     transform: translate(-33px, 194px);
+//   }
+// }
+@keyframes astroidl {
   0% {
-    transform: translate(97px, -64px);
+    // transform: translate(23px, -20px);
+
+    transform: translate(182px, -50px);
+
   }
   100% {
-    transform: translate(-33px, 194px);
+    // transform: translate(20px, 330px);
+    transform: translate(-58px, 200px);
   }
 }
 
-@keyframes astroid-l2 {
+
+
+@keyframes astroidl2 {
   0% {
     transform: translate(2px, -100px);
   }
@@ -386,7 +420,7 @@ a {
     opacity: 0%;
     /* visibility: hidden; */
     left: 18%;
-    animation: explode 5s ease 4s;
+    animation: explode 3.5s ease 3.9s;
     /* animation: show 0s ease-in 4s; */
     animation-fill-mode: forwards;
 }
