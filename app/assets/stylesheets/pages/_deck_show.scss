@@ -2,8 +2,11 @@
   position: absolute;
   transition: all 3s ease-in-out;
   top: -47px;
-  /* top: 36%; */
   left: 34%;
+
+
+  // top: 36%;
+  //   left: 0px;
 }
 
 .star {
@@ -17,6 +20,7 @@
 .scene-lg {
   background-color: rgb(29, 29, 111);
   height: 100vh;
+  bottom: 16px;
 
   /* width: 293px; */
   /* margin: auto; */
@@ -193,16 +197,16 @@
 } */
 
 
-.explosion {
-    width: 200px;
-    position: absolute;
-    top: 28%;
-    z-index: 1;
-    visibility: hidden;
-    left: 18%;
-    animation: show 0s ease-in 4s;
-    animation-fill-mode: forwards;
-}
+// .explosion {
+//     width: 200px;
+//     position: absolute;
+//     top: 28%;
+//     z-index: 1;
+//     visibility: hidden;
+//     left: 18%;
+//     animation: show 0s ease-in 4s;
+//     animation-fill-mode: forwards;
+// }
 
 @keyframes show {
   to {
@@ -218,8 +222,12 @@
 }
 
 #axis .move-down {
-    transform: translate(0,350px);
-    -webkit-transform: translate(0,350px);
+  -webkit-transform: translate(0,350px);
+  -ms-transform: translateY(0,350px);
+  -webkit-transform: translateY(0,350px);
+  -moz-transform: translateY(0,350px);
+  -o-transform: translateY(0,350px);
+  transform: translate(0,350px);
 }
 
 .show-info {

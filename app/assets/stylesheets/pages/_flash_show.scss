@@ -3,6 +3,8 @@
   position: absolute;
   top: 25%;
   left: 40%;
+  // top: 25%;
+  // left: 40%;
 }
 
 .scene {
@@ -11,6 +13,8 @@
   width: 293px;
   margin: auto;
   position: relative;
+  border-radius: 20px;
+
 }
 
 .star {
@@ -137,7 +141,10 @@
   }
 }
 
-
+.results-info {
+  width: auto;
+  margin-left: 37px;
+}
 
 // @keyframes astroid2 {
 //   0% {
@@ -148,3 +155,337 @@
 //     transform: translate(240px, -266px);
 //   }
 // }
+
+a {
+  color:#212121;
+}
+
+
+
+
+
+
+// explosion cut scene
+
+#top {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  animation: hide-scene 1s ease 8s both
+  // visibility: hidden;
+}
+
+@keyframes hide-scene {
+  0% {
+    visibility: visible;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
+
+
+.rocket-lg-move {
+  position: absolute;
+  transform: rotate(90deg);
+  position: absolute;
+  top: 36%;
+  left: 34%;
+  opacity: 1;
+  animation: hide 1s ease 5s both;
+}
+
+.scene-lg-move {
+  background-color: rgb(29, 29, 111);
+  height: 100vh;
+  // overflow: hidden;
+  width: 100%;
+
+  /* width: 293px; */
+  /* margin: auto; */
+  position: relative;
+
+  margin: 0;
+  // width: 100%;
+  padding: 0;
+}
+
+.star {
+  width: 20px;
+
+  position: relative;
+  /* animation: move 1s linear infinite; */
+
+}
+
+.first {
+  right: 20px;
+  animation: 1s move 1s linear infinite running;
+}
+
+.second {
+  position: relative;
+  top: 50px;
+  right: 55px;
+  animation: 1s move 4.5s linear infinite running;
+}
+
+.third {
+  position: relative;
+  right: 85px;
+  top: 110px;
+  animation: 1s move 2s linear infinite running;
+}
+
+.fourth {
+  position: relative;
+  top: 95px;
+  right: 135px;
+  animation: 2s move2 5s linear infinite running;
+}
+
+.fifth {
+  position: relative;
+  top: 10px;
+  right: 115px;
+  animation: 2s move2 1.5s linear infinite running;
+}
+
+.sixth {
+  top: 221px;
+  right: 135px;
+  animation: 1s move 1s linear infinite running;
+}
+
+.seventh {
+  position: relative;
+  top: 480px;
+  right: 170px;
+  animation: 1s move 4.5s linear infinite running;
+}
+
+.eigth {
+  position: relative;
+  right: 190px;
+  top: 520px;
+  animation: 1s move 2s linear infinite running;
+}
+
+.nineth {
+  position: relative;
+  top: 410px;
+  right: 215px;
+  animation: 2s move2 5s linear infinite running;
+}
+
+.tenth {
+  position: relative;
+  top: 315px;
+  right: 245px;
+  animation: 2s move2 1.5s linear infinite running;
+}
+
+@keyframes move2 {
+              0% {
+                transform:translate(300px)
+              }
+              50% {
+            transform:translate(0)
+            }
+          100% {
+            transform:translate(0)
+          }
+        }
+
+
+@keyframes move {
+
+          100% {
+            transform:translate(0)
+          }
+
+          0% {
+            transform:translate(300px)
+          }
+        }
+
+
+.astroid-lg {
+  top: 0px;
+  right: 20px;
+  width: 110px;
+  position: relative;
+  transition: all 2s ease-in-out;
+  /* -webkit-transition: all 2s ease-in-out; * Chrome & Safari * */
+}
+
+
+
+.four {
+  position: absolute;
+    top: -45px;
+    right: -2px;
+    // top: 70px;
+    // top: -322px;
+
+    // right: 235px;
+    transform: translate(14px, -70px);
+    /* -webkit-transform: translate(-350px, 350px); */
+    z-index: 1;
+    animation: 2s astroidl 2s linear running;
+    /* animation-delay: 5s; */
+}
+.box {
+  position: absolute;
+    top: 254px;
+    right: 223px;
+    transform: translate(91px, -180px);
+    /* transform: translate(21px, -180px); */
+    /* transform: translate(-180px, 21px); */
+    /* -webkit-transform: translate(-350px, 350px); */
+    z-index: 1;
+    animation: 2s astroidl2 1s linear running;
+    /* animation-delay: 5s; */
+}
+
+// @keyframes astroid-l {
+//   0% {
+//     transform: translate(97px, -64px);
+//   }
+//   100% {
+//     transform: translate(-33px, 194px);
+//   }
+// }
+@keyframes astroidl {
+  0% {
+    // transform: translate(23px, -20px);
+
+    transform: translate(182px, -50px);
+
+  }
+  100% {
+    // transform: translate(20px, 330px);
+    transform: translate(-58px, 200px);
+  }
+}
+
+
+
+@keyframes astroidl2 {
+  0% {
+    transform: translate(2px, -100px);
+  }
+  100% {
+    /* transform: translate(157px, -243px); */
+    transform: translate(240px, -266px);
+  }
+}
+
+
+    /* transform: translate(-350px, 350px); */
+    /* -webkit-transform: translate(-350px, 350px); */
+    /* -o-transform: translate(350px,-350px);
+    -moz-transform: translate(350px,-350px); */
+
+
+/* .animate {
+  -webkit-animation: simple 3s forwards ease;
+}
+
+@-webkit-keyframes simple move {
+  50% {
+    -webkit-transform: translateX(300px);
+    -moz-transform: translateX(300px);
+    -ms-transform: translateX(300px);
+    -o-transform: translateX(300px);
+    transform: translateX(300px);
+  }
+  100% {
+    -webkit-transform: translateX(300px) translateY(300px);
+    -moz-transform: translateX(300px) translateY(300px);
+    -ms-transform: translateX(300px) translateY(300px);
+    -o-transform: translateX(300px) translateY(300px);
+    transform: translateX(300px) translateY(300px);
+  }
+} */
+
+
+.explosion {
+    width: 200px;
+    position: absolute;
+    top: 28%;
+    z-index: 1;
+    opacity: 0%;
+    /* visibility: hidden; */
+    left: 18%;
+    animation: explode 3.5s ease 3.9s;
+    /* animation: show 0s ease-in 4s; */
+    animation-fill-mode: forwards;
+}
+
+/* .fadeaway {
+  animation: fadeOut ease 9s;
+  animation-delay: 7s;
+} */
+
+@keyframes show {
+  to {
+    visibility: visible;
+  }
+}
+
+
+@keyframes explode {
+  0% {
+    opacity:0;
+  }
+  25%{
+    opacity: 1;
+  }
+  75% {
+    opacity:1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+.astronaut {
+  width: 76px;
+  position: absolute;
+  top: 227px;
+  left: 112px;
+  /* animation: show 0s ease-in 4s; */
+  animation: astro-fadein 1s ease 5s both;
+  /* animation: 2s move2 5s linear infinite running; */
+}
+
+
+@keyframes show {
+  to {
+    visibility: visible;
+  }
+}
+
+@keyframes astro-fadein {
+  0% {
+    opacity:0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity:1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
