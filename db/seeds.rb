@@ -1,6 +1,13 @@
 require "date"
 # anja = User.first
 puts "seeding has begun"
+User.destroy_all
+Deck.destroy_all
+Flashcard.destroy_all
+QuestionType.destroy_all
+Topic.destroy_all
+Attempt.destroy_all
+
 anja = User.create(first_name: "Anja", last_name: "Drayton", email: "text@email.com", password: "secret")
 
 multi = QuestionType.create(name: "multiple-choice", instruction: "Select the best answer.")
