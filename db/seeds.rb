@@ -9,8 +9,8 @@ require "date"
 # anja = User.first
 puts "seeding has begun"
 anja = User.create(first_name: "Anja", last_name: "Drayton", email: "text@email.com", password: "secret")
-multi = QuestionType.create(name: "multiple-choice", instruction: "select the best answer")
-sort = QuestionType.create(name: "sort", instruction: "Sort the code into the correct order.")
+multi = QuestionType.create(name: "multiple-choice", instruction: "Select the best answer")
+sort = QuestionType.create(name: "sort", instruction: "Sort the lines into the correct order.")
 
 topic1 = Topic.create(name: "Ruby")
 topic2 = Topic.create(name: "Object Oriented Programming")
@@ -46,11 +46,11 @@ card3 = Flashcard.create(question: "Flashcard 3 question?", answer: "F3 correct 
 card4 = Flashcard.create(question: "Flashcard 4 question?", answer: "F4 correct answer", question_type: multi, deck: deck2, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
 card5 = Flashcard.create(question: "Flashcard 5 question?", answer: "F5 correct answer", question_type: multi, deck: deck2, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
 
-card1 = Flashcard.create(question: "Flashcard 1 question?", answer: "F1 correct answer", question_type: multi, deck: deck3, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
-card2 = Flashcard.create(question: "Flashcard 2 question?", answer: "F2 correct answer", question_type: multi, deck: deck3, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
-card3 = Flashcard.create(question: "Flashcard 3 question?", answer: "F3 correct answer", question_type: multi, deck: deck3, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
-card4 = Flashcard.create(question: "where does one go for any and all rat related hat fashion?", answer: "mathildesrathatpalace.info", question_type: multi, deck: deck3, choice1: "Wait rats wear hats?", choice2: "ratters hats and co", choice3: "A place like that cannot exist")
-card5 = Flashcard.create(question: "George's best persona?", answer: "Chris Hemsworth", question_type: multi, deck: deck3, choice1: "KimK", choice2: "Chewbacca", choice3: "Lady Gaga")
+card1 = Flashcard.create(question: "How many cans of V has Chad consumed during project weeks?", answer: "20+", question_type: multi, deck: deck3, choice1: "0-5", choice2: "6-10", choice3: "11-19")
+card2 = Flashcard.create(question: "George's best persona?", answer: "Chris Hemsworth", question_type: multi, deck: deck3, choice1: "KimK", choice2: "Chewbacca", choice3: "Lady Gaga")
+card3 = Flashcard.create(question: "Favourite TA?", answer: "choose 1?~But they~are all~awesome!", question_type: sort, deck: deck3, sort1: "But they", sort2: "choose 1?", sort3: "awesome!", sort4: "are all")
+card4 = Flashcard.create(question: "Academy award for best Le Wagon Actor/Actress", answer: "Manon in Among Us~Alastair: 'my dad's rat life advice'~George: 'I'm going to gym after livecode'~Mariya: What? I'm not a hacker", question_type: sort, deck: deck3, sort1: "Mariya: What? I'm not a hacker", sort2: "Manon in Among Us", sort3: "Alastair: 'my dad's rat life advice'", sort4: "George: 'I'm going to gym after livecode'")
+card5 = Flashcard.create(question: "where does one go for any and all rat related hat fashion?", answer: "mathildesrathatpalace.info", question_type: multi, deck: deck3, choice1: "Wait rats wear hats?", choice2: "ratters hats and co", choice3: "A place like that cannot exist")
 
 card1 = Flashcard.create(question: "Flashcard 1 question?", answer: "F1 correct answer", question_type: multi, deck: deck4, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
 card2 = Flashcard.create(question: "Flashcard 2 question?", answer: "F2 correct answer", question_type: multi, deck: deck4, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
