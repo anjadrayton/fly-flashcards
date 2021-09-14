@@ -179,9 +179,15 @@ a {
 @keyframes hide-scene {
   0% {
     visibility: visible;
-  }
-
-  100% {
+  } 25% {
+    opacity: 75%;
+  } 50% {
+    opacity: 50%;
+  } 75% {
+    opacity: 25%;
+  } 100% {
+    opacity: 0%;
+    // transition: visibility 2s;
     visibility: hidden;
   }
 }
@@ -255,7 +261,7 @@ a {
 
 .sixth {
   top: 221px;
-  right: 135px;
+  right: 140px;
   animation: 1s move 1s linear infinite running;
 }
 
@@ -268,7 +274,7 @@ a {
 
 .eigth {
   position: relative;
-  right: 190px;
+  right: 195px;
   top: 520px;
   animation: 1s move 2s linear infinite running;
 }
@@ -276,7 +282,7 @@ a {
 .nineth {
   position: relative;
   top: 410px;
-  right: 215px;
+  right: 220px;
   animation: 2s move2 5s linear infinite running;
 }
 
