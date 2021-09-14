@@ -1,3 +1,13 @@
+.form-check-label {
+  color: black !important;
+}
+
+.sticky {
+  position: sticky;
+  bottom: 10px;
+  left: 30%;
+}
+
 .rocket {
   transform: rotate(90deg);
   position: absolute;
@@ -143,7 +153,6 @@
 
 .results-info {
   width: auto;
-  margin-left: 37px;
 }
 
 // @keyframes astroid2 {
@@ -159,11 +168,6 @@
 a {
   color:#212121;
 }
-
-
-
-
-
 
 // explosion cut scene
 

@@ -134,7 +134,7 @@
       <% if @type.name == 'multiple-choice' %>
         <%= simple_form_for [@deck, @flashcard], url: deck_flashcard_attempts_path(@deck, @flashcard), method: :post do |f| %>
           <%# <%= f.input :answer, as: :buttons, collection: @options, checked: @options.first %>
-          <%= f.input :answer, as: :radio_buttons, collection: @options, checked: @options.first %>
+          <%= f.input :answer, as: :radio_buttons, collection: @options, checked: @options.first, class: "multichoice-colour" %>
           <%= f.submit "Submit Answer", class: "btn pill" %>
         <% end %>
       <% end %>
@@ -146,10 +146,10 @@
               <div class="list-group-item"><%= option %></div>
             <% end %>
           </div>
+          <br>
           <input type="hidden" id="current_order"  name="current_order" value="" />
           <%= f.submit "Submit Answer", class: "btn btn-primary" %>
         <% end %>
-
       <% end %>
     <% end %>
     <div class = "results-info">
@@ -158,10 +158,10 @@
       <% if @type.name == 'multiple-choice' %>
         <h3>Your Answer</h3>
         <p><%= @submission %></p>
+        <br>
         <h3>Correct Answer</h3>
         <p><%= @flashcard.answer %></p>
       <% end %>
-
       <% if @type.name == 'sort' %>
         <h3>Your Submission</h3>
         <div class="list-group col">
@@ -169,6 +169,7 @@
             <div class="list-group-item"><%= submission_line %></div>
           <% end %>
         </div>
+        <br>
         <h3>Correct Answer</h3>
         <div class="list-group col">
           <% @answer_array.each do |answer_line| %>
@@ -177,13 +178,13 @@
         </div>
       <% end %>
 
-
+      <br>
       <% if @wrong_attempts >= 2 %>
         <p>Better Luck Next Time</p>
         <button class = "btn pill text-white"><%= link_to 'Restart Deck', deck_flashcard_path(@deck, @deck.flashcards.first) %></button>
       <% else %>
         <% if @next_question_index < @deck_card_count %>
-          <button class = "btn pill text-white"><%= link_to 'Next Question', deck_flashcard_path(@deck, @deck.flashcards[@next_question_index]) %></button>
+          <button class = "btn pill text-white sticky"><%= link_to 'Next Question', deck_flashcard_path(@deck, @deck.flashcards[@next_question_index]) %></button>
         <% else %>
         <%# content_for(:body_attributes) do %>
           <%# data-turbolinks="false" %>
