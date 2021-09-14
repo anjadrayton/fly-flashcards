@@ -154,7 +154,12 @@
     <% end %>
     <div class = "results-info">
     <% if params[:display] == 'result' %>
-      <p class= "text-pill">Your answer was <%= @flashcard.attempt.attempt_correct ? "correct" : 'incorrect' %></p>
+      <% if @flashcard.attempt.attempt_correct %>
+        <p class = "green text-pill">Your answer was correct</p>
+      <% else %>
+        <p class = "red text-pill">Your answer was incorrect</p>
+      <% end %>
+
       <% if @type.name == 'multiple-choice' %>
         <h3>Your Answer</h3>
         <p><%= @submission %></p>
