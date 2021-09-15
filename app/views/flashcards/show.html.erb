@@ -76,13 +76,14 @@
           <img class="star fourth" src="sparkle.png" alt="star">
           <img class="star fifth" src="sparkle.png" alt="star"> %>
 
-      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star first"%>
-      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star second"%>
-      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star third"%>
-      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star fourth"%>
-      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star fifth"%>
+        <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star first"%>
+        <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star second"%>
+        <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star third"%>
+        <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star fourth"%>
+        <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star fifth"%>
           <!-- <img class = "astroid one"src="astroid.png" alt="astroid">
           <img class="astroid two" src="astroid.png" alt="astroid"> -->
+
 
 
           <svg xmlns="http://www.w3.org/2000/svg" version="1" viewbox="0 0 741 1255" width="67.7" height="67.7" id="player1"
@@ -111,6 +112,7 @@
           <%= image_tag 'astroid.png', class: "astroid object plane move-ne"%>
           <%# <img class="astroid object plane move-ne" src="astroid.png" alt="star"> %>
       </div>
+      <%= image_tag 'explosion.png', class: "mini-explosion"%>
         <svg xmlns="http://www.w3.org/2000/svg" version="1" viewbox="0 0 741 1255" width="67.7" height="67.7" id="player1"
           class="rocket">
           <path fill="#1560d6"
@@ -142,7 +144,7 @@
   <div class="container">
 
     <% if params[:display] != 'result' %>
-    <h6 class = "sub-headings">Question <%= @question_number %>.</h6>
+    <h6 class = "sub-headings">Question <%= @question_number %></h6>
     <h4><%= @flashcard.question %></h4>
     <p class = "sub-headings"><%= @type.instruction %></p>
     <%= hidden_field_tag "question_type", @flashcard.question_type.name, { id: "question-type" } %>
@@ -174,7 +176,12 @@
         <p class = "sub-headings green-h">Woohoo!</p>
         <h3 class = "full-headings">You were correct</h3>
       <% else %>
-        <p class = "sub-headings red-h">Oopsie daisy!</p>
+        <% if @wrong_attempts < 2 %>
+          <p class = "sub-headings red-h">🚨 Critical Spaceship Damage</p>
+          <p class = "sub-headings">You won't survive another hit!</p>
+        <% else %>
+          <p class = "sub-headings">Houston, we have a problem...</p>
+        <% end %>
         <h3 class = "full-headings">You were incorrect</h3>
       <% end %>
 
