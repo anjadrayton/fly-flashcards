@@ -13,6 +13,19 @@
             </button>
           </h2>
         </div>
+<h1 class = "title"> Pick a Topic</h1>
+<% @topics.each_with_index do |topic, index|  %>
+<div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id=<% index %>>
+      <h2 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-item<%= index %>" aria-expanded="true" aria-controls="collapseOne">
+        <%# <%= image_tag topic.name.split(" ").map(&:downcase).join("_") %>
+        <%= cl_image_tag(topic.name.split(" ").map(&:downcase).join("_"),
+      width: 166, height: 90) %>
+        </button>
+      </h2>
+    </div>
 
         <div id="accordion-item<%= index %>" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample" >
           <div class="card-body">

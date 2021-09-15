@@ -1,49 +1,45 @@
-<% if params[:display] == 'result' %>
-  <% if @flashcard.attempt.attempt_correct %>
-    <div class = "scene">
-        <%# <img class = "star first" src = "app/assets/images/sparkle.png" alt="star" >
-        <img class="star second" src="sparkle.png" alt="star">
-        <img class="star third" src="sparkle.png" alt="star">
-        <img class="star fourth" src="sparkle.png" alt="star">
-        <img class="star fifth" src="sparkle.png" alt="star"> %>
+<div id ="top">
 
-    <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star first"%>
-    <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star second"%>
-    <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star third"%>
-    <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star fourth"%>
-    <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star fifth"%>
-        <!-- <img class = "astroid one"src="astroid.png" alt="astroid">
+  <% if params[:display] == 'result' %>
+    <% if @wrong_attempts >= 2 %>
+      <div class="scene-lg-move">
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star first"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star second"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star third"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star fourth"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star fifth"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star sixth"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star seventh"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star eigth"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star nineth"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star tenth"%>
+      <!-- <img class = "astroid one"src="astroid.png" alt="astroid">
         <img class="astroid two" src="astroid.png" alt="astroid"> -->
+      <!-- <style>
+        @keyframes move {
 
+          110% {
+            transform: translate(0)
+          }
 
-        <svg xmlns="http://www.w3.org/2000/svg" version="1" viewbox="0 0 741 1255" width="67.7" height="67.7" id="player1"
-          class="rocket">
-          <path fill="#1560d6"
-            d="M565 728c-6 68-15 130-29 186 88 38 156 106 187 188 12-32 18-65 18-100 0-116-70-217-176-274zM265 1020l8 25h194l9-25H265z" />
-            <path fill="#e83d37" d="M210 937c8 30 17 58 26 83h269c9-25 18-53 26-83H210z" />
-            <path fill="#1560d6" d="M0 1002c0 35 6 68 18 100 31-82 99-150 187-188-14-55-23-118-29-186A314 314 0 0 0 0 1002z" />
-            <path fill="#DFE3E5"
-              d="M571 585c0-125-30-241-67-337a395 395 0 0 1-270 0c-36 94-64 209-64 337a1658 1658 0 0 0 34 329l6 23h321l5-23a1313 1313 0 0 0 35-329z" />
-            <circle fill="#B8BDBF" cx="370" cy="481" r="100" />
-            <path fill="#ead3b0" d="M455 481a85 85 0 1 1-170 0 85 85 0 0 1 170 0z" />
-            <path fill="#1560d6" d="M234 248a394 394 0 0 0 270 0C446 98 370 0 370 0c-9 10-81 104-136 248z" />
-        </svg>
-    </div>
-  <% else %>
-    <div class="scene">
-    <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star first"%>
-    <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star second"%>
-    <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star third"%>
-    <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star fourth"%>
-    <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star fifth"%>
-
-      <div id="axis" class="five">
-        <%= image_tag 'astroid.png', class: "astroid object plane move-ne"%>
-        <%# <img class="astroid object plane move-ne" src="astroid.png" alt="star"> %>
+          0% {
+            transform: translate(300px)
+          }
+        }
+      </style> -->
+      <div id="axis" class="four">
+        <%= image_tag 'astroid.png', class: "astroid-lg"%>
+        <%# <img class="astroid-lg object plane move-ne" src="astroid.png" alt="star"> %>
       </div>
-
-      <svg xmlns="http://www.w3.org/2000/svg" version="1" viewbox="0 0 741 1255" width="67.7" height="67.7" id="player1"
-        class="rocket">
+      <%= image_tag 'explosion.png', class: "explosion"%>
+      <%# <img class="explosion fadeOut" src="explosion.png" alt="boom"> %>
+      <%# <img class="astronaut" src="astronaut.png" alt="astronaut"> %>
+      <%= image_tag 'astronaut.png', class: "astronaut"%>
+      <!-- <div id="axis" class="box">
+        <img class="astroid2 object plane move-ne" src="astroid.png" alt="star">
+      </div> -->
+      <svg xmlns="http://www.w3.org/2000/svg" version="1" viewbox="0 0 741 1255" width="100" height="120" id="player1"
+        class="rocket-lg-move">
         <path fill="#1560d6"
           d="M565 728c-6 68-15 130-29 186 88 38 156 106 187 188 12-32 18-65 18-100 0-116-70-217-176-274zM265 1020l8 25h194l9-25H265z" />
         <path fill="#e83d37" d="M210 937c8 30 17 58 26 83h269c9-25 18-53 26-83H210z" />
@@ -73,58 +69,156 @@
         <%= f.submit "Submit Answer", class: "btn btn-primary" %>
       <% end %>
     <% end %>
+  <% end %>
+</div>
+<div class = "bottom">
 
-    <% if @type.name == 'sort' %>
-      <%= simple_form_for [@deck, @flashcard], html: {id: 'sort-form'}, url: deck_flashcard_attempts_path(@deck, @flashcard), method: :post do |f| %>
-        <div id="sort-options" class="list-group col">
-          <% @options.each do |option| %>
-            <div class="list-group-item"><%= option %></div>
-          <% end %>
+
+
+<%# end of explosion cut scene %>
+
+
+  <% if params[:display] == 'result' %>
+    <% if @flashcard.attempt.attempt_correct %>
+      <div class = "scene">
+          <%# <img class = "star first" src = "app/assets/images/sparkle.png" alt="star" >
+          <img class="star second" src="sparkle.png" alt="star">
+          <img class="star third" src="sparkle.png" alt="star">
+          <img class="star fourth" src="sparkle.png" alt="star">
+          <img class="star fifth" src="sparkle.png" alt="star"> %>
+
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star first"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star second"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star third"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star fourth"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star fifth"%>
+          <!-- <img class = "astroid one"src="astroid.png" alt="astroid">
+          <img class="astroid two" src="astroid.png" alt="astroid"> -->
+
+
+          <svg xmlns="http://www.w3.org/2000/svg" version="1" viewbox="0 0 741 1255" width="67.7" height="67.7" id="player1"
+            class="rocket">
+            <path fill="#1560d6"
+              d="M565 728c-6 68-15 130-29 186 88 38 156 106 187 188 12-32 18-65 18-100 0-116-70-217-176-274zM265 1020l8 25h194l9-25H265z" />
+              <path fill="#e83d37" d="M210 937c8 30 17 58 26 83h269c9-25 18-53 26-83H210z" />
+              <path fill="#1560d6" d="M0 1002c0 35 6 68 18 100 31-82 99-150 187-188-14-55-23-118-29-186A314 314 0 0 0 0 1002z" />
+              <path fill="#DFE3E5"
+                d="M571 585c0-125-30-241-67-337a395 395 0 0 1-270 0c-36 94-64 209-64 337a1658 1658 0 0 0 34 329l6 23h321l5-23a1313 1313 0 0 0 35-329z" />
+              <circle fill="#B8BDBF" cx="370" cy="481" r="100" />
+              <path fill="#ead3b0" d="M455 481a85 85 0 1 1-170 0 85 85 0 0 1 170 0z" />
+              <path fill="#1560d6" d="M234 248a394 394 0 0 0 270 0C446 98 370 0 370 0c-9 10-81 104-136 248z" />
+          </svg>
+      </div>
+    <% else %>
+      <div class="scene">
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star first"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star second"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star third"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star fourth"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star fifth"%>
+
+        <div id="axis" class="five">
+          <%= image_tag 'astroid.png', class: "astroid object plane move-ne"%>
+          <%# <img class="astroid object plane move-ne" src="astroid.png" alt="star"> %>
         </div>
-        <input type="hidden" id="current_order"  name="current_order" value="" />
-        <%= f.submit "Submit Answer", class: "btn btn-primary" %>
-      <% end %>
 
+        <svg xmlns="http://www.w3.org/2000/svg" version="1" viewbox="0 0 741 1255" width="67.7" height="67.7" id="player1"
+          class="rocket">
+          <path fill="#1560d6"
+            d="M565 728c-6 68-15 130-29 186 88 38 156 106 187 188 12-32 18-65 18-100 0-116-70-217-176-274zM265 1020l8 25h194l9-25H265z" />
+          <path fill="#e83d37" d="M210 937c8 30 17 58 26 83h269c9-25 18-53 26-83H210z" />
+          <path fill="#1560d6"
+            d="M0 1002c0 35 6 68 18 100 31-82 99-150 187-188-14-55-23-118-29-186A314 314 0 0 0 0 1002z" />
+          <path fill="#DFE3E5"
+            d="M571 585c0-125-30-241-67-337a395 395 0 0 1-270 0c-36 94-64 209-64 337a1658 1658 0 0 0 34 329l6 23h321l5-23a1313 1313 0 0 0 35-329z" />
+          <circle fill="#B8BDBF" cx="370" cy="481" r="100" />
+          <path fill="#ead3b0" d="M455 481a85 85 0 1 1-170 0 85 85 0 0 1 170 0z" />
+          <path fill="#1560d6" d="M234 248a394 394 0 0 0 270 0C446 98 370 0 370 0c-9 10-81 104-136 248z" />
+        </svg>
+      </div>
     <% end %>
   <% end %>
   <br>
-  <% if params[:display] == 'result' %>
-    <% if @type.name == 'multiple-choice' %>
-      <h3>Your Submission</h3>
-      <p><%= @submission %></p>
-      <h3>Correct Answer</h3>
-      <p><%= @flashcard.answer %></p>
-    <% end %>
+  <div class="container">
+    <% if params[:display] != 'result' %>
+    <h1><%= @deck.name %></h1>
 
-    <% if @type.name == 'sort' %>
-      <h3>Your Submission</h3>
-      <div class="list-group col">
-        <% @submission_array.each do |submission_line| %>
-          <div class="list-group-item"><%= submission_line %></div>
+    <p><%= @flashcard.question %> (Question <%= @question_number %> out of <%= @deck.flashcards.count %>)</p>
+    <p><%= @type.instruction %></p>
+    <%= hidden_field_tag "question_type", @flashcard.question_type.name, { id: "question-type" } %>
+
+      <% if @type.name == 'multiple-choice' %>
+        <%= simple_form_for [@deck, @flashcard], url: deck_flashcard_attempts_path(@deck, @flashcard), method: :post do |f| %>
+          <%# <%= f.input :answer, as: :buttons, collection: @options, checked: @options.first %>
+          <%= f.input :answer, as: :radio_buttons, collection: @options, checked: @options.first, class: "multichoice-colour" %>
+          <%= f.submit "Submit Answer", class: "btn pill" %>
         <% end %>
-      </div>
-      <h3>Correct Answer</h3>
-      <div class="list-group col">
-        <% @answer_array.each do |answer_line| %>
-          <div class="list-group-item"><%= answer_line %></div>
+      <% end %>
+
+      <% if @type.name == 'sort' %>
+        <%= simple_form_for [@deck, @flashcard], html: {id: 'sort-form'}, url: deck_flashcard_attempts_path(@deck, @flashcard), method: :post do |f| %>
+          <div id="sort-options" class="list-group col">
+            <% @options.each do |option| %>
+              <div class="list-group-item"><%= option %></div>
+            <% end %>
+          </div>
+          <br>
+          <input type="hidden" id="current_order"  name="current_order" value="" />
+          <%= f.submit "Submit Answer", class: "btn btn-primary" %>
         <% end %>
-      </div>
+      <% end %>
     <% end %>
+    <div class = "results-info">
+    <% if params[:display] == 'result' %>
+      <p class= "text-pill">Your answer was <%= @flashcard.attempt.attempt_correct ? "correct" : 'incorrect' %></p>
+      <% if @type.name == 'multiple-choice' %>
+        <h3>Your Answer</h3>
+        <p><%= @submission %></p>
+        <br>
+        <h3>Correct Answer</h3>
+        <p><%= @flashcard.answer %></p>
+      <% end %>
+      <% if @type.name == 'sort' %>
+        <h3>Your Submission</h3>
+        <div class="list-group col">
+          <% @submission_array.each do |submission_line| %>
+            <div class="list-group-item"><%= submission_line %></div>
+          <% end %>
+        </div>
+        <br>
+        <h3>Correct Answer</h3>
+        <div class="list-group col">
+          <% @answer_array.each do |answer_line| %>
+            <div class="list-group-item"><%= answer_line %></div>
+          <% end %>
+        </div>
+      <% end %>
 
-    <p>Your answer was <%= @flashcard.attempt.attempt_correct ? "correct" : 'incorrect' %>.</p>
-
-    <% if @wrong_attempts >= 2 %>
-      <h2>Game Over</h2>
-      <%= link_to 'Restart Deck', deck_flashcard_path(@deck, @deck.flashcards.first) %>
-    <% else %>
-      <% if @next_question_index < @deck_card_count %>
-        <%= link_to 'Next Question', deck_flashcard_path(@deck, @deck.flashcards[@next_question_index]) %>
+      <br>
+      <% if @wrong_attempts >= 2 %>
+        <p>Better Luck Next Time</p>
+        <button class = "btn pill text-white"><%= link_to 'Restart Deck', deck_flashcard_path(@deck, @deck.flashcards.first) %></button>
       <% else %>
-      <% content_for(:body_attributes) do %>
-        data-turbolinks="false"
-      <% end %>
-        <%= link_to 'Deck results', deck_path(@deck), data: {turbolinks: false} %>
+        <% if @next_question_index < @deck_card_count %>
+          <button class = "btn pill text-white sticky"><%= link_to 'Next Question', deck_flashcard_path(@deck, @deck.flashcards[@next_question_index]) %></button>
+        <% else %>
+        <%# content_for(:body_attributes) do %>
+          <%# data-turbolinks="false" %>
+        <%# end %>
+          <button class = "btn pill text-white"><%= link_to 'Deck results', deck_path(@deck), data: {turbolinks: false} %></button>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
+    </div>
+  </div>
 </div>
+
+
+<%# <script>
+  console.log("working")
+  section = document.querySelector('top')
+  setTimeout(function() {
+  //your code to be executed after 1 second
+    section.style.visibility='hidden'
+  }, 7000);
+</script> %>
