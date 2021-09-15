@@ -1,0 +1,109 @@
+
+.form-check {
+  padding: 0px;
+}
+
+.form-check-label {
+  color: black !important;
+    border: solid;
+    border-color: #9e9e9e;
+    border-width: 2px;
+    padding: 6px;
+    margin-bottom: 4px;
+    border-radius: 7px;
+    background-color: white;
+    cursor: pointer;
+    width: 270px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: bold;
+}
+
+// .form-check:checked {
+//   border: solid !important;
+//   border-color: #d69efd !important;
+//   border-width: 1px !important;
+// }
+
+.form-check-input {
+  position: absolute;
+  transform: scale(0);
+}
+// li:has(> a.active) { /* styles to apply to the li tag */ }
+
+.form-check-input:checked + label {
+  border: solid !important;
+  border-color: #d69efd !important;
+  border-width: 2px !important;
+}
+
+.form-check-input + label:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: relative;
+    display: inline-block;
+    background-image: asset-url('unchecked.jpg');
+    background-size: cover;
+    margin-right: 12px;
+  }
+.form-check-input:checked + label:before {
+  background-image: asset-url('check.png');
+  margin-right: 12px;
+}
+
+.correct-sub {
+  color: black !important;
+    border: solid;
+    border-color: #884bb4;
+    border-width: 2px;
+    padding: 6px;
+    margin-bottom: 4px;
+    border-radius: 7px;
+    background-color: white;
+    cursor: pointer;
+    width: 270px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: bold;
+}
+.correct-sub:before {
+    content: "";
+    width: 21px;
+    height: 21px;
+    position: relative;
+    display: inline-block;
+    background-image: asset-url('check.png');
+    background-size: cover;
+    margin-right: 12px;
+  }
+.incorrect-sub {
+  color: black !important;
+    border: solid;
+    border-color: #ff1125;
+    border-width: 2px;
+    padding: 6px;
+    margin-bottom: 4px;
+    border-radius: 7px;
+    background-color: white;
+    cursor: pointer;
+    width: 270px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: bold;
+}
+
+.incorrect-sub:before {
+    content: "";
+    width: 21px;
+    height: 21px;
+    position: relative;
+    display: inline-block;
+    background-image: asset-url('ex.png');
+    background-size: cover;
+    margin-right: 12px;
+  }
+
+.flashcard_answer > .col-form-label {
+  visibility: hidden;
+  position: absolute;
+  width: 0%;
+  height: 0%;
+}

@@ -94,6 +94,7 @@
           </svg>
       </div>
     <% else %>
+      <% if @wrong_attempts != 2 %>
       <div class="scene">
       <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star first"%>
       <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star second"%>
@@ -104,8 +105,7 @@
         <div id="axis" class="five">
           <%= image_tag 'astroid.png', class: "astroid object plane move-ne"%>
           <%# <img class="astroid object plane move-ne" src="astroid.png" alt="star"> %>
-        </div>
-
+      </div>
         <svg xmlns="http://www.w3.org/2000/svg" version="1" viewbox="0 0 741 1255" width="67.7" height="67.7" id="player1"
           class="rocket">
           <path fill="#1560d6"
@@ -120,15 +120,25 @@
           <path fill="#1560d6" d="M234 248a394 394 0 0 0 270 0C446 98 370 0 370 0c-9 10-81 104-136 248z" />
         </svg>
       </div>
+    <% else %>
+    <div class="scene">
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star first-slow"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star second-slow"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star third-slow"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star fourth-slow"%>
+      <%= image_tag 'sparkle.png', style: "width: 20px;", class: "star fifth-slow"%>
+
+      <%= image_tag 'astronaut.png', class: "astronaut-still"%>
+      </div>
+    <% end %>
     <% end %>
   <% end %>
   <br>
   <div class="container">
     <% if params[:display] != 'result' %>
-    <h1><%= @deck.name %></h1>
 
-    <p><%= @flashcard.question %> (Question <%= @question_number %> out of <%= @deck.flashcards.count %>)</p>
-    <p><%= @type.instruction %></p>
+    <p class = "sub-headings"><%= @flashcard.question %> (Question <%= @question_number %> out of <%= @deck.flashcards.count %>)</p>
+    <h4><%= @type.instruction %></h4>
     <%= hidden_field_tag "question_type", @flashcard.question_type.name, { id: "question-type" } %>
 
       <% if @type.name == 'multiple-choice' %>
@@ -155,16 +165,19 @@
     <div class = "results-info">
     <% if params[:display] == 'result' %>
       <% if @flashcard.attempt.attempt_correct %>
-        <p class = "green text-pill">Your answer was correct</p>
+        <p class = "sub-headings">Woohoo!</p>
+        <h3 class = "full-headings">You were </h3> <h3 class = "green-h"> correct</h3>
       <% else %>
-        <p class = "red text-pill">Your answer was incorrect</p>
+        <p class = "sub-headings">Oopsie daisy!</p>
+        <h3 class = "full-headings">You were </h3> <h3 class = "red-h"> incorrect</h3>
       <% end %>
 
       <% if @type.name == 'multiple-choice' %>
-        <h3>Your Answer</h3>
-        <p><%= @submission %></p>
-        <h3>Correct Answer</h3>
-        <p><%= @flashcard.answer %></p>
+        <p class = "sub-headings">Flashcard <%= @question_number %> question?</p>
+        <p class = "correct-sub"><%= @submission %></p>
+        <% if !@flashcard.attempt.attempt_correct %>
+          <p class = "incorrect-sub"><%= @flashcard.answer %></p>
+        <% end %>
       <% end %>
 
       <% if @type.name == 'sort' %>
@@ -184,7 +197,7 @@
 
 
       <% if @wrong_attempts >= 2 %>
-        <p>Better Luck Next Time</p>
+        <p class= "sub-headings">Better Luck Next Time</p>
         <button class = "btn pill text-white"><%= link_to 'Restart Deck', deck_flashcard_path(@deck, @deck.flashcards.first) %></button>
       <% else %>
         <% if @next_question_index < @deck_card_count %>

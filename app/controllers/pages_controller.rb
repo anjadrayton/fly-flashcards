@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @topic = Topic.where(name: 'Ruby')
-    @deck = Deck.where(name: 'Parsing')
+    @deck = Deck.where(name: 'Hash & Symbols')
     @flashcards = @deck[0].flashcards
     @correct_attempts = 0
     @flashcards.each do |flashcard|
