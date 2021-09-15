@@ -17,7 +17,7 @@ class FlashcardsController < ApplicationController
     if @type.name == 'multiple-choice'
       @options = [@flashcard.answer, @flashcard.choice1, @flashcard.choice2, @flashcard.choice3].sample(4)
     elsif @type.name == 'sort'
-      @options = [@flashcard.sort1, @flashcard.sort2, @flashcard.sort3, @flashcard.sort4].sample(4)
+      @options = [@flashcard.sort1, @flashcard.sort2, @flashcard.sort3, @flashcard.sort4]
     end
 
     if params[:display] == 'result'

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,300;0,400;1,500&display=swap');
+.full-headings {
+  display: inline-block;
+}
+.sub-headings {
+  color: grey;
+  font-weight: bold;
+}
+
+.green-h {
+  color: green;
+  display: inline-block;
+}
+.red-h {
+  color: red;
+  display: inline-block;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}

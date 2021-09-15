@@ -19,12 +19,10 @@
 
 .scene {
   background-color: rgb(29, 29, 111);
-  height: 163px;
-  width: 293px;
+  height: 165px;
+  width: 100%;
   margin: auto;
   position: relative;
-  border-radius: 20px;
-
 }
 
 .star {
@@ -177,16 +175,22 @@ a {
   position: absolute;
   width: 100%;
   top: 0px;
-  animation: hide-scene 1s ease 8s both
+  animation: hide-scene 1s ease 10s both
   // visibility: hidden;
 }
 
 @keyframes hide-scene {
   0% {
     visibility: visible;
-  }
-
-  100% {
+  } 25% {
+    opacity: 75%;
+  } 50% {
+    opacity: 50%;
+  } 75% {
+    opacity: 25%;
+  } 100% {
+    opacity: 0%;
+    // transition: visibility 2s;
     visibility: hidden;
   }
 }
@@ -260,7 +264,7 @@ a {
 
 .sixth {
   top: 221px;
-  right: 135px;
+  right: 140px;
   animation: 1s move 1s linear infinite running;
 }
 
@@ -273,7 +277,7 @@ a {
 
 .eigth {
   position: relative;
-  right: 190px;
+  right: 195px;
   top: 520px;
   animation: 1s move 2s linear infinite running;
 }
@@ -281,7 +285,7 @@ a {
 .nineth {
   position: relative;
   top: 410px;
-  right: 215px;
+  right: 220px;
   animation: 2s move2 5s linear infinite running;
 }
 
@@ -463,11 +467,24 @@ a {
   position: absolute;
   top: 227px;
   left: 112px;
-  /* animation: show 0s ease-in 4s; */
-  animation: astro-fadein 1s ease 5s both;
+  // visibility: hidden;
+  // animation: show 0s ease-in 4s;
+
+  // z-index: 2;
+  animation: astro-fadein 1s ease 5s both, 10s floataway 6.6s running;
+  // animation: 6s floataway 6.6s running;
   /* animation: 2s move2 5s linear infinite running; */
 }
 
+@keyframes floataway {
+  0% {
+    transform: translate(-1px, 17px);
+  }
+  100% {
+    /* transform: translate(157px, -243px); */
+    transform: translate(-200px, 166px);
+  }
+}
 
 @keyframes show {
   to {
@@ -494,4 +511,45 @@ a {
     opacity: 0;
   }
 
+}
+
+
+.first-slow {
+  right: 20px;
+  animation: 5s move 1s linear infinite running;
+}
+
+.second-slow {
+  position: relative;
+  top: 50px;
+  right: 50px;
+  animation: 5s move 4.5s linear infinite running;
+}
+
+.third-slow {
+  position: relative;
+  right: 80px;
+  top: 110px;
+  animation: 5s move 2s linear infinite running;
+}
+
+.fourth-slow {
+  position: relative;
+  top: 95px;
+  right: 130px;
+  animation: 6s move2 5s linear infinite running;
+}
+
+.fifth-slow {
+  position: relative;
+  top: 10px;
+  right: 115px;
+  animation: 5.5s move2 1.5s linear infinite running;
+}
+
+.astronaut-still {
+  width: 65px;
+  position: absolute;
+  top: 25%;
+  left: 40%;
 }
