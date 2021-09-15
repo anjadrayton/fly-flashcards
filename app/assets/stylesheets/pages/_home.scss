@@ -4,7 +4,8 @@
   height: 100vh;
   background-size: cover;
   position: relative;
-  bottom: 16px;
+  // bottom: 16px;
+  bottom: 0px;
 }
 
 .home2 {
@@ -28,7 +29,21 @@
 .title {
   text-align: center;
 }
+.home-btn {
+  position: absolute;
+    top: 331px;
+    width: 102px;
+    left: 106px;
+    padding: 5px;
+    border-radius: 13px;
+    /* border: solid; */
+    /* border-width: 2px; */
+    /* border-color: #8128bd; */
+    background-color: #bb5afd;
+    color: white;
+    /* font-weight: bold; */
 
+}
 // html, body {
 //     margin:0;
 //     padding:0;
