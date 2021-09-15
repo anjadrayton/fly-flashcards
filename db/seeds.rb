@@ -11,6 +11,7 @@ QuestionType.destroy_all
 anja = User.create(first_name: "Anja", last_name: "Drayton", email: "text@email.com", password: "secret")
 
 multi = QuestionType.create(name: "multiple-choice", instruction: "Select the best answer.")
+
 sort = QuestionType.create(name: "sort", instruction: "Sort the lines into the correct order.")
 
 topic1 = Topic.create(name: "Ruby")
@@ -35,7 +36,7 @@ deck13 = Deck.create(name: "Routing, Controllers & Views", topic: topic5)
 deck14 = Deck.create(name: "Models & CRUD", topic: topic5)
 deck15 = Deck.create(name: "Hosting & Image Upload", topic: topic5)
 
-card1 = Flashcard.create(question: "What characterizes a Hash?", answer: "It has unique keys, It is unordered", question_type: multi, deck: deck1, choice1: "Text between quotation marks", choice2: "The only hash I know is hashbrown?", choice3: "hashes are not real #hashconspiracy")
+card1 = Flashcard.create(question: "What characterizes a Hash?", answer: "It has unique keys, It is unordered", question_type: multi, deck: deck1, choice1: "Text between quotation marks", choice2: "Huh? The only hash I know is hashbrown", choice3: "hashes are not real #hashconspiracy")
 card2 = Flashcard.create(question: "How can you get all the values of a Hash in an array?", answer: ".values", question_type: multi, deck: deck1, choice1: "(values)", choice2: ":values", choice3: "!values")
 card3 = Flashcard.create(question: "How can you tell if a key is present in a Hash", answer: ".key? will return true", question_type: multi, deck: deck1, choice1: ".key? will return false", choice2: ".key? wont return true or false", choice3: "None of these")
 card4 = Flashcard.create(question: "where does one go for any and all rat related hat fashion", answer: "mathildesrathatpalace.info", question_type: multi, deck: deck1, choice1: "Wait rats wear hats?", choice2: "ratters hats and co", choice3: "A place like that cannot exist")

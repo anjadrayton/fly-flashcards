@@ -52,6 +52,22 @@
         <path fill="#1560d6" d="M234 248a394 394 0 0 0 270 0C446 98 370 0 370 0c-9 10-81 104-136 248z" />
       </svg>
     </div>
+  <% end %>
+<% end %>
+<br>
+<div class="container" class="bg-purple-500">
+  <h1><%= @deck.name %></h1>
+
+  <p><%= @flashcard.question %> (Question <%= @question_number %> out of <%= @deck.flashcards.count %>)</p>
+  <p><%= @type.instruction %></p>
+  <%= hidden_field_tag "question_type", @flashcard.question_type.name, { id: "question-type" } %>
+
+  <% if params[:display] != 'result' %>
+    <% if @type.name == 'multiple-choice' %>
+      <%= simple_form_for [@deck, @flashcard], url: deck_flashcard_attempts_path(@deck, @flashcard), method: :post do |f| %>
+        <%= f.input :answer, as: :radio_buttons, collection: @options, checked: @options.first %>
+        <%= f.submit "Submit Answer", class: "btn btn-primary" %>
+      <% end %>
     <% end %>
   <% end %>
 </div>

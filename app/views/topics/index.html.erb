@@ -1,3 +1,18 @@
+<div class="nav-header">
+  <h1 class="heading" style="margin-bottom: 0px">Topics</h1>
+</div>
+<div style="background: #01002a">
+  <% @topics.each_with_index do |topic, index|  %>
+    <div class="accordion planetaccord" id="accordionExample" >
+      <div class="card">
+        <div class="card-header" id=<% index %>>
+          <h2 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-item<%= index %>" aria-expanded="true" aria-controls="collapseOne">
+            <%# <%= image_tag topic.name.split(" ").map(&:downcase).join("_") %>
+            <%= cl_image_tag(topic.name.split(" ").map(&:downcase).join("_"), height: 90)%>
+            </button>
+          </h2>
+        </div>
 <h1 class = "title"> Pick a Topic</h1>
 <% @topics.each_with_index do |topic, index|  %>
 <div class="accordion" id="accordionExample">
@@ -12,16 +27,25 @@
       </h2>
     </div>
 
-    <div id="accordion-item<%= index %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card-body">
-        <% Deck.where(topic: topic).each do |deck| %>
-       <%= link_to deck.name, deck_flashcard_path(deck, deck.flashcards.first)%><br>
-       <%# link not working %>
-       <%# <p>Deck: <%= deck.name<br></p> %>
-        <% end %>
+        <div id="accordion-item<%= index %>" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample" >
+          <div class="card-body">
+            <% Deck.where(topic: topic).each do |deck| %>
+              <div id="deck">
+                <%= link_to deck_flashcard_path(deck, deck.flashcards.first) do %>
+                  <%= deck.name %>
+                  <div class="number-badge" style="margin-left: 5px;">
+                    <%= deck.flashcards.count %>
+                  </div>
+                <% end %>
+              </div>
+              <%# link not working %>
+              <%# <p>Deck: <%= deck.name<br></p> %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 <%# Flashcard.where(deck: deck).first %>
