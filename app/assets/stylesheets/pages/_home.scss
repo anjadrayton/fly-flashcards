@@ -3,14 +3,17 @@
   background: asset-url("journey6.png");
   height: 100vh;
   background-size: cover;
+
 }
 
 .purple {
     position: absolute;
-    bottom: 183px;
+    bottom: 199px;
     left: 34%;
     width: 99px;
-    background-color: #d69fff;
-    border-color: #d69fff;
+    background-color: #fefefe;
+    border-color: #fefefe;
     border-radius: 30px;
+    color: #cc66ff;
+    text-emphasis-style: bold;
 }
