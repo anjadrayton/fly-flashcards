@@ -52,6 +52,22 @@
         <path fill="#1560d6" d="M234 248a394 394 0 0 0 270 0C446 98 370 0 370 0c-9 10-81 104-136 248z" />
       </svg>
     </div>
+  <% end %>
+<% end %>
+<br>
+<div class="container" class="bg-purple-500">
+  <h1><%= @deck.name %></h1>
+
+  <p><%= @flashcard.question %> (Question <%= @question_number %> out of <%= @deck.flashcards.count %>)</p>
+  <p><%= @type.instruction %></p>
+  <%= hidden_field_tag "question_type", @flashcard.question_type.name, { id: "question-type" } %>
+
+  <% if params[:display] != 'result' %>
+    <% if @type.name == 'multiple-choice' %>
+      <%= simple_form_for [@deck, @flashcard], url: deck_flashcard_attempts_path(@deck, @flashcard), method: :post do |f| %>
+        <%= f.input :answer, as: :radio_buttons, collection: @options, checked: @options.first %>
+        <%= f.submit "Submit Answer", class: "btn btn-primary" %>
+      <% end %>
     <% end %>
   <% end %>
 </div>
@@ -144,7 +160,7 @@
       <% if @type.name == 'multiple-choice' %>
         <%= simple_form_for [@deck, @flashcard], url: deck_flashcard_attempts_path(@deck, @flashcard), method: :post do |f| %>
           <%# <%= f.input :answer, as: :buttons, collection: @options, checked: @options.first %>
-          <%= f.input :answer, as: :radio_buttons, collection: @options, checked: @options.first %>
+          <%= f.input :answer, as: :radio_buttons, collection: @options, checked: @options.first, class: "multichoice-colour" %>
           <%= f.submit "Submit Answer", class: "btn pill" %>
         <% end %>
       <% end %>
@@ -156,10 +172,10 @@
               <div class="list-group-item"><%= option %></div>
             <% end %>
           </div>
+          <br>
           <input type="hidden" id="current_order"  name="current_order" value="" />
           <%= f.submit "Submit Answer", class: "btn btn-primary" %>
         <% end %>
-
       <% end %>
     <% end %>
     <div class = "results-info">
@@ -173,13 +189,13 @@
       <% end %>
 
       <% if @type.name == 'multiple-choice' %>
-        <p class = "sub-headings">Flashcard <%= @question_number %> question?</p>
+
+        <p class = "sub-headings">Flashcard <%= @question_number %></p>
         <p class = "correct-sub"><%= @submission %></p>
         <% if !@flashcard.attempt.attempt_correct %>
           <p class = "incorrect-sub"><%= @flashcard.answer %></p>
         <% end %>
       <% end %>
-
       <% if @type.name == 'sort' %>
         <h3>Your Submission</h3>
         <div class="list-group col">
@@ -187,6 +203,7 @@
             <div class="list-group-item"><%= submission_line %></div>
           <% end %>
         </div>
+        <br>
         <h3>Correct Answer</h3>
         <div class="list-group col">
           <% @answer_array.each do |answer_line| %>
@@ -195,13 +212,13 @@
         </div>
       <% end %>
 
-
+      <br>
       <% if @wrong_attempts >= 2 %>
         <p class= "sub-headings">Better Luck Next Time</p>
         <button class = "btn pill text-white"><%= link_to 'Restart Deck', deck_flashcard_path(@deck, @deck.flashcards.first) %></button>
       <% else %>
         <% if @next_question_index < @deck_card_count %>
-          <button class = "btn pill text-white"><%= link_to 'Next Question', deck_flashcard_path(@deck, @deck.flashcards[@next_question_index]) %></button>
+          <button class = "btn pill text-white sticky"><%= link_to 'Next Question', deck_flashcard_path(@deck, @deck.flashcards[@next_question_index]) %></button>
         <% else %>
         <%# content_for(:body_attributes) do %>
           <%# data-turbolinks="false" %>

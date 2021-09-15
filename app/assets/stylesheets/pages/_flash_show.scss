@@ -1,3 +1,13 @@
+.form-check-label {
+  color: black !important;
+}
+
+.sticky {
+  position: sticky;
+  bottom: 10px;
+  left: 30%;
+}
+
 .rocket {
   transform: rotate(90deg);
   position: absolute;
@@ -153,14 +163,10 @@
 //   }
 // }
 
+
 a {
   color:#212121;
 }
-
-
-
-
-
 
 // explosion cut scene
 
@@ -504,6 +510,7 @@ a {
   100% {
     opacity: 0;
   }
+
 }
 
 

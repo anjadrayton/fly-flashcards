@@ -11,6 +11,7 @@ QuestionType.destroy_all
 anja = User.create(first_name: "Anja", last_name: "Drayton", email: "text@email.com", password: "secret")
 
 multi = QuestionType.create(name: "multiple-choice", instruction: "Select the best answer.")
+
 sort = QuestionType.create(name: "sort", instruction: "Sort the lines into the correct order.")
 
 topic1 = Topic.create(name: "Ruby")
@@ -34,6 +35,7 @@ deck12 = Deck.create(name: "JavaScript", topic: topic4)
 deck13 = Deck.create(name: "Routing, Controllers & Views", topic: topic5)
 deck14 = Deck.create(name: "Models & CRUD", topic: topic5)
 deck15 = Deck.create(name: "Hosting & Image Upload", topic: topic5)
+
 
 Flashcard.create(question: "Flashcard 1 question?", answer: "F1 correct answer", question_type: multi, deck: deck1, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
 Flashcard.create(question: "Flashcard 1 question?", answer: "F1 correct answer", question_type: multi, deck: deck1, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
@@ -139,5 +141,6 @@ Flashcard.create(question: "Flashcard 2 question?", answer: "F2 correct answer",
 Flashcard.create(question: "Flashcard 3 question?", answer: "F3 correct answer", question_type: multi, deck: deck15, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
 Flashcard.create(question: "Flashcard 4 question?", answer: "F4 correct answer", question_type: multi, deck: deck15, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
 Flashcard.create(question: "Flashcard 5 question?", answer: "F5 correct answer", question_type: multi, deck: deck15, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
+
 
 puts "seeding has finished"
