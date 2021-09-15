@@ -57,6 +57,10 @@
 <br>
 </div>
 <div class = "bottom">
+  <div class = "nav-bar">
+    <h6 class = "nav-head">Quiz</h6>
+    <h5 class = "nav-topic"><%= @flashcard.deck.topic.name %></h5>
+  </div>
 
 
 
@@ -136,10 +140,11 @@
   <% end %>
   <br>
   <div class="container">
-    <% if params[:display] != 'result' %>
 
-    <p class = "sub-headings"><%= @flashcard.question %> (Question <%= @question_number %> out of <%= @deck.flashcards.count %>)</p>
-    <h4><%= @type.instruction %></h4>
+    <% if params[:display] != 'result' %>
+    <h6 class = "sub-headings">Question <%= @question_number %>.</h6>
+    <h4><%= @flashcard.question %></h4>
+    <p class = "sub-headings"><%= @type.instruction %></p>
     <%= hidden_field_tag "question_type", @flashcard.question_type.name, { id: "question-type" } %>
 
       <% if @type.name == 'multiple-choice' %>
@@ -159,26 +164,26 @@
           </div>
           <br>
           <input type="hidden" id="current_order"  name="current_order" value="" />
-          <%= f.submit "Submit Answer", class: "btn btn-primary" %>
+          <%= f.submit "Submit Answer", class: "btn pill" %>
         <% end %>
       <% end %>
     <% end %>
     <div class = "results-info">
     <% if params[:display] == 'result' %>
       <% if @flashcard.attempt.attempt_correct %>
-        <p class = "sub-headings">Woohoo!</p>
-        <h3 class = "full-headings">You were </h3> <h3 class = "green-h"> correct</h3>
+        <p class = "sub-headings green-h">Woohoo!</p>
+        <h3 class = "full-headings">You were correct</h3>
       <% else %>
-        <p class = "sub-headings">Oopsie daisy!</p>
-        <h3 class = "full-headings">You were </h3> <h3 class = "red-h"> incorrect</h3>
+        <p class = "sub-headings red-h">Oopsie daisy!</p>
+        <h3 class = "full-headings">You were incorrect</h3>
       <% end %>
 
       <% if @type.name == 'multiple-choice' %>
 
         <p class = "sub-headings">Flashcard <%= @question_number %></p>
-        <p class = "correct-sub"><%= @submission %></p>
+        <p class = "correct-sub"><%= @flashcard.answer %></p>
         <% if !@flashcard.attempt.attempt_correct %>
-          <p class = "incorrect-sub"><%= @flashcard.answer %></p>
+          <p class = "incorrect-sub"><%= @submission %></p>
         <% end %>
       <% end %>
       <% if @type.name == 'sort' %>

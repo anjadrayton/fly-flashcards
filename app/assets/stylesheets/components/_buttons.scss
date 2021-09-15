@@ -1,20 +1,42 @@
 .pill {
-  border-radius: 20px;
-  // width: 99px;
-  background-color: #d69fff;
-  border-color: #d69fff;
-  border-radius: 30px;
+    width: 90%;
+    border-radius: 6px;
+    color: white;
+    background-color: #bb5afd;
+    border-color: #bb5afd;
 }
 
 .text-pill {
   border-radius: 22px;
   width: 241px;
   padding: 0 13px;
-  color: white;
+  color: white !important;
 }
 .green {
   background-color: #0a9039;
 }
 .red {
   background-color: #e84537;
+}
+button.btn-pill > a{
+  color: white !important;
+}
+
+.pill-end1 {
+  display: inline-block;
+  width: 33%;
+  border-radius: 6px;
+  color: white;
+  background-color: #bb5afd;
+  border-color: #bb5afd;
+}
+.pill-end2 {
+    display: inline-block;
+    width: 33%;
+    border-radius: 6px;
+    border-width: 2px;
+    color: #bb5afd;
+    background-color: white;
+    border-color: #bb5afd;
+    /* float: right; */
 }

@@ -4,8 +4,8 @@
 
 .sticky {
   position: sticky;
-  bottom: 10px;
-  left: 30%;
+  // bottom: 10px;
+  // left: 30%;
 }
 
 .rocket {
@@ -19,10 +19,11 @@
 
 .scene {
   background-color: rgb(29, 29, 111);
-  height: 165px;
+  height: 175px;
   width: 100%;
   margin: auto;
   position: relative;
+  top: -3px;
 }
 
 .star {
@@ -112,10 +113,12 @@
     top: 0px;
     right: 0px;
     // transform: translate(14px, -70px);
-    transform: translate(14px, -70px);
+    // transform: translate(14px, -70px);
+    transform: translate(14px, -107px);
+
     /* -webkit-transform: translate(-350px, 350px); */
     z-index: 1;
-    animation: 1s astroid 0.5s linear running;
+    animation: 1.5s astroid 1.5s linear running;
     /* animation-delay: 5s; */
 }
 // .box {
@@ -142,10 +145,11 @@
 
 @keyframes astroid {
   0% {
-    transform: translate(14px, -70px);
+    // transform: translate(14px, -70px);
+    transform: translate(14px, -107px);
   }
   100% {
-    transform: translate(-79px, 25px);
+    transform: translate(-79px, 34px);
   }
 }
 
