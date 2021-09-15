@@ -32,7 +32,7 @@ import { initSortable } from '../plugins/init_sortable';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  // initSortable();
+  initSortable();
 
   anime({
     targets: '.planetaccord',
