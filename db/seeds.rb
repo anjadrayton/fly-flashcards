@@ -67,7 +67,7 @@ Flashcard.create(question: "Flashcard 1 question?", answer: "F1 correct answer",
 Flashcard.create(question: "What characterizes a Hash?", answer: "It has unique keys and it is unordered.", question_type: multi, deck: deck3, choice1: "Text between quotation marks.", choice2: "The only hash I know is hashbrown?", choice3: "Hashes are not real. #conspiracy")
 Flashcard.create(question: "How many cans of V has the team consumed during project weeks?", answer: "20+", question_type: multi, deck: deck3, choice1: "0-5", choice2: "6-10", choice3: "11-19")
 Flashcard.create(question: "What were the most annoying things about bootcamp?", answer: "Covid~Pair Programming~Doing project demos~Aaron asking so many questions during lectures", question_type: sort, deck: deck3, sort1: "Doing project demos", sort2: "Aaron asking so many questions during lectures", sort3: "Covid", sort4: "Pair Programming")
-Flashcard.create(question: "Which of the following is not a symbol?", answer: "&ruby", question_type: multi, deck: deck3, choice1: "Marilyn Monroe", choice2: ":ruby", choice3: "💍")
+Flashcard.create(question: "Which of the following is not a symbol?", answer: "ruby", question_type: multi, deck: deck3, choice1: "Marilyn Monroe", choice2: ":ruby", choice3: "💍")
 Flashcard.create(question: "What's the best path to become a developer?", answer: "Join a Le Wagon bootcamp~Learn the dark arts of coding~????~Profit!", question_type: sort, deck: deck3, sort1: "????", sort2: "Profit!", sort3: "Join a Le Wagon bootcamp" , sort4: "Learn the dark arts of coding")
 
 Flashcard.create(question: "Flashcard 1 question?", answer: "F1 correct answer", question_type: multi, deck: deck4, choice1: "wrong answer 1", choice2: "wrong answer 2", choice3: "wrong answer 3")
