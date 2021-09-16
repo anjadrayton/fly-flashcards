@@ -186,22 +186,26 @@
       <% end %>
 
       <% if @type.name == 'multiple-choice' %>
-
         <p class = "sub-headings">Flashcard <%= @question_number %></p>
-        <%# render 'components/correct_option', text: @flashcard.answer %>
+
+        <p><%= @flashcard.question %></p>
+
         <p class = "correct-sub"><%= @flashcard.answer %></p>
         <% if !@flashcard.attempt.attempt_correct %>
           <p class = "incorrect-sub"><%= @submission %></p>
         <% end %>
       <% end %>
       <% if @type.name == 'sort' %>
-        <h3>Your Submission</h3>
-        <div class="list-group col">
-          <% @submission_array.each do |submission_line| %>
-            <div class="list-group-item"><%= submission_line %></div>
-          <% end %>
-        </div>
-        <br>
+        <p><%= @flashcard.question %></p>
+        <% if !@flashcard.attempt.attempt_correct %>
+          <h3>Your Submission</h3>
+          <div class="list-group col">
+            <% @submission_array.each do |submission_line| %>
+              <div class="list-group-item"><%= submission_line %></div>
+            <% end %>
+          </div>
+          <br>
+        <% end %>
         <h3>Correct Answer</h3>
         <div class="list-group col">
           <% @answer_array.each do |answer_line| %>
