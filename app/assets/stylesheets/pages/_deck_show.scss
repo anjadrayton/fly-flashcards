@@ -20,7 +20,8 @@
 .scene-lg {
   background-color: rgb(29, 29, 111);
   height: 100vh;
-  bottom: 16px;
+  // bottom: 16px;
+  bottom: 0px;
 
   /* width: 293px; */
   /* margin: auto; */
@@ -233,7 +234,8 @@
 .show-info {
   position: absolute;
   top: 22%;
-  right: 13%;
+  width: 100%;
+  // right: 13%;
   text-align: center;
   color: white;
   // opacity: 0%;

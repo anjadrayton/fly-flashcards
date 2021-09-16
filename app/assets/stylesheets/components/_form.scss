@@ -15,7 +15,7 @@
     cursor: pointer;
     width: 270px;
     font-family: 'Barlow Semi Condensed', sans-serif;
-    font-weight: bold;
+    // font-weight: bold;
 }
 
 // .form-check:checked {
@@ -32,7 +32,7 @@
 
 .form-check-input:checked + label {
   border: solid !important;
-  border-color: #d69efd !important;
+  border-color: #bb5afd !important;
   border-width: 2px !important;
 }
 
@@ -54,7 +54,7 @@
 .correct-sub {
   color: black !important;
     border: solid;
-    border-color: #884bb4;
+    border-color: #bb5afd;
     border-width: 2px;
     padding: 6px;
     margin-bottom: 4px;
@@ -63,7 +63,7 @@
     cursor: pointer;
     width: 270px;
     font-family: 'Barlow Semi Condensed', sans-serif;
-    font-weight: bold;
+    // font-weight: bold;
 }
 .correct-sub:before {
     content: "";
@@ -87,7 +87,7 @@
     cursor: pointer;
     width: 270px;
     font-family: 'Barlow Semi Condensed', sans-serif;
-    font-weight: bold;
+    // font-weight: bold;
 }
 
 .incorrect-sub:before {
