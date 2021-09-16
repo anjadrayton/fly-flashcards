@@ -187,7 +187,9 @@
 
       <% if @type.name == 'multiple-choice' %>
         <p class = "sub-headings">Flashcard <%= @question_number %></p>
+
         <p><%= @flashcard.question %></p>
+
         <p class = "correct-sub"><%= @flashcard.answer %></p>
         <% if !@flashcard.attempt.attempt_correct %>
           <p class = "incorrect-sub"><%= @submission %></p>
@@ -215,15 +217,15 @@
       <br>
       <% if @wrong_attempts >= 2 %>
         <p class= "sub-headings">Better Luck Next Time</p>
-        <button class = "btn pill text-white"><%= link_to 'Restart Deck', deck_flashcard_path(@deck, @deck.flashcards.first) %></button>
+        <%= link_to 'Restart Deck', deck_flashcard_path(@deck, @deck.flashcards.first), class: "btn pill text-white sticky" %>
       <% else %>
         <% if @next_question_index < @deck_card_count %>
-          <button class = "btn pill text-white sticky"><%= link_to 'Next Question', deck_flashcard_path(@deck, @deck.flashcards[@next_question_index]) %></button>
+          <%= link_to 'Next Question', deck_flashcard_path(@deck, @deck.flashcards[@next_question_index]), class: "btn pill text-white sticky"%>
         <% else %>
         <%# content_for(:body_attributes) do %>
           <%# data-turbolinks="false" %>
         <%# end %>
-          <button class = "btn pill text-white"><%= link_to 'Deck results', deck_path(@deck), data: {turbolinks: false} %></button>
+          <%= link_to 'Results', deck_path(@deck), class: "btn pill text-white sticky", data: {turbolinks: false} %>
         <% end %>
       <% end %>
     <% end %>
