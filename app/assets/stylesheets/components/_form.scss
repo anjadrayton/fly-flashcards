@@ -8,13 +8,17 @@
     border: solid;
     border-color: #9e9e9e;
     border-width: 2px;
-    padding: 6px;
+    padding: 10px;
     margin-bottom: 4px;
     border-radius: 7px;
     background-color: white;
     cursor: pointer;
     width: 270px;
     font-family: 'Barlow Semi Condensed', sans-serif;
+    position: relative;
+    padding-left: 35px;
+    line-height: 1rem;
+
     // font-weight: bold;
 }
 
@@ -38,13 +42,16 @@
 
 .form-check-input + label:before {
     content: "";
-    width: 20px;
-    height: 20px;
+    width: 21px;
+    height: 21px;
     position: relative;
     display: inline-block;
     background-image: asset-url('unchecked.jpg');
     background-size: cover;
-    margin-right: 12px;
+    top: 50%;
+    left: 7px;
+    transform: translatey(-50%);
+    position: absolute;
   }
 .form-check-input:checked + label:before {
   background-image: asset-url('check.png');
@@ -53,17 +60,20 @@
 
 .correct-sub {
   color: black !important;
-    border: solid;
-    border-color: #bb5afd;
-    border-width: 2px;
-    padding: 6px;
-    margin-bottom: 4px;
-    border-radius: 7px;
-    background-color: white;
-    cursor: pointer;
-    width: 270px;
-    font-family: 'Barlow Semi Condensed', sans-serif;
-    // font-weight: bold;
+  border: solid;
+  border-color: #bb5afd;
+  border-width: 2px;
+  padding: 10px;
+  margin-bottom: 4px;
+  border-radius: 7px;
+  background-color: white;
+  cursor: pointer;
+  width: 270px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  position: relative;
+  padding-left: 35px;
+  line-height: 1rem;
+  // font-weight: bold;
 }
 .correct-sub:before {
     content: "";
@@ -73,7 +83,10 @@
     display: inline-block;
     background-image: asset-url('check.png');
     background-size: cover;
-    margin-right: 12px;
+    top: 50%;
+    left: 7px;
+    transform: translatey(-50%);
+    position: absolute;
   }
 .incorrect-sub {
   color: black !important;

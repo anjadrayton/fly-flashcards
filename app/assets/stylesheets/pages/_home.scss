@@ -29,19 +29,25 @@
 .title {
   text-align: center;
 }
-.home-btn {
+
+.home-btn-container {
   position: absolute;
-    top: 331px;
-    width: 102px;
-    left: 106px;
-    padding: 5px;
-    border-radius: 13px;
-    /* border: solid; */
-    /* border-width: 2px; */
-    /* border-color: #8128bd; */
-    background-color: #bb5afd;
-    color: white;
-    /* font-weight: bold; */
+  top: 331px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.home-btn {
+  width: 102px;
+  padding: 5px;
+  border-radius: 13px;
+  /* border: solid; */
+  /* border-width: 2px; */
+  /* border-color: #8128bd; */
+  background-color: #bb5afd;
+  color: white;
+  /* font-weight: bold; */
 
 }
 // html, body {

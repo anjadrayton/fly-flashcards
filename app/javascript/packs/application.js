@@ -51,4 +51,10 @@ document.addEventListener('turbolinks:load', () => {
       { value: [0, 1], duration: 300, easing: 'easeOutQuad' }
     ],
   });
+
+  anime({
+  targets: '.rocket-landing',
+  translateY: 350,
+  duration: 800
+  });
 });
