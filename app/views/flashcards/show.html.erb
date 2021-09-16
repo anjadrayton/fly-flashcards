@@ -221,7 +221,7 @@
         <%# content_for(:body_attributes) do %>
           <%# data-turbolinks="false" %>
         <%# end %>
-          <button class = "btn pill text-white"><%= link_to 'Deck results', deck_path(@deck), data: {turbolinks: false} %></button>
+          <%= link_to 'Results', deck_path(@deck), class: "btn pill text-white sticky", data: {turbolinks: false} %>
         <% end %>
       <% end %>
     <% end %>
