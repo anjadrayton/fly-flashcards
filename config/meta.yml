@@ -1,0 +1,6 @@
+# config/meta.yml
+
+meta_product_name: "Fly Flashcards"
+meta_title: "Fly Flashcards - The not boring learning app"
+meta_description: "Gamified flashcards for students keen to beat procrastination"
+meta_image: "meta-img.jpg" # should exist in `app/assets/images/`
