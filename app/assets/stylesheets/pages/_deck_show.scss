@@ -25,7 +25,7 @@
 }
 
 .first_still {
-  left: 34px;
+  left: 10%;
   top: 266px;
   /* animation: 1s move 1s linear infinite running; */
 }
@@ -33,13 +33,13 @@
 .second_still {
   position: relative;
   top: 46px;
-  left: -6px;
+  left: 0%;
   /* animation: 1s move 4.5s linear infinite running; */
 }
 
 .third_still {
   position: relative;
-  left: 44px;
+  left: 20%;
   top: 141px;
   /* animation: 1s move 2s linear infinite running; */
 }
@@ -47,20 +47,21 @@
 .fourth_still {
   position: relative;
   top: 95px;
-  left: 130px;
+  left: 40%;
   /* animation: 2s move2 5s linear infinite running; */
 }
 
 .fifth_still {
   position: relative;
   top: 10px;
-  left: 110px;
+  left: 45%;
+
   /* animation: 2s move2 1.5s linear infinite running; */
 }
 
 .sixth_still {
   top: 221px;
-  left: 130px;
+      left: 50%;
   /* animation: 1s move 1s linear infinite running; */
 }
 
@@ -208,7 +209,7 @@
 
 .rocket-and-earth {
   position: fixed;
-  bottom: -400px;
+  bottom: -500px;
   width: 100vw;
   display: flex;
   justify-content: center;
