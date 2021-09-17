@@ -90,16 +90,6 @@
           }
         }
 
-
-.astroid {
-  top: 0px;
-  right: 20px;
-  width: 50px;
-  position: relative;
-  transition: all 2s ease-in-out;
-  /* -webkit-transition: all 2s ease-in-out; * Chrome & Safari * */
-}
-
 // .astroid2 {
 //   top: 0px;
 //   right: 50px;
@@ -109,19 +99,19 @@
 //   /* -webkit-transition: all 2s ease-in-out; * Chrome & Safari * */
 // }
 
-.five {
-  position: absolute;
-    top: 0px;
-    right: 0px;
-    // transform: translate(14px, -70px);
-    // transform: translate(14px, -70px);
-    transform: translate(14px, -107px);
+// .five {
+//   position: absolute;
+//     top: 0px;
+//     right: 0px;
+//     // transform: translate(14px, -70px);
+//     // transform: translate(14px, -70px);
+//     transform: translate(14px, -107px);
 
-    /* -webkit-transform: translate(-350px, 350px); */
-    z-index: 1;
-    animation: 1.5s astroid 1.5s linear running;
-    /* animation-delay: 5s; */
-}
+//     /* -webkit-transform: translate(-350px, 350px); */
+//     z-index: 1;
+//     animation: 1.5s astroid 1.5s linear running;
+//     /* animation-delay: 5s; */
+// }
 // .box {
 //   position: absolute;
 //     top: 254px;
@@ -143,16 +133,6 @@
 //     transform: translate(-70px, 80px);
 //   }
 // }
-
-@keyframes astroid {
-  0% {
-    // transform: translate(14px, -70px);
-    transform: translate(14px, -107px);
-  }
-  100% {
-    transform: translate(-79px, 34px);
-  }
-}
 
 .results-info {
   width: 82%;
@@ -583,4 +563,63 @@ a {
   right: 114px;
   z-index: 1;
   animation: explode 1.3s ease 2.8s;
+}
+
+.explosion-and-rocket {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+
+  .five {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    .astroid {
+      animation: 1.5s astroid 1.5s linear running;
+      // top: 0px;
+      // right: 20px;
+      width: 50px;
+      transform: translate(280%, -350%);
+      // position: relative;
+      // transition: all 2s ease-in-out;
+      /* -webkit-transition: all 2s ease-in-out; * Chrome & Safari * */
+    }
+  }
+
+  .axis {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .mini-explosion {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .rocket-container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    .rocket-1 {
+      transform: rotate(90deg);
+      transform-origin: center;
+    }
+  }
+}
+
+@keyframes astroid {
+  0% {
+    // transform: translate(14px, -70px);
+    transform: translate(270%, -340%);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
