@@ -1,13 +1,4 @@
-.rocket-lg {
-  position: absolute;
-  transition: all 3s ease-in-out;
-  top: -47px;
-  left: 34%;
 
-
-  // top: 36%;
-  //   left: 0px;
-}
 
 .star {
   width: 20px;
@@ -215,12 +206,34 @@
   }
 }
 
-.earth {
-  position: relative;
-  top: 374px;
-  right: 203px;
-  width: 700px;
+.rocket-and-earth {
+  position: fixed;
+  bottom: -400px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .six {
+    display: flex;
+    justify-content: center;
+    transform: translateY(-350px);
+
+    .rocket-lg {
+      // transform: translateY(-350px);
+      margin-bottom: -25px;
+      transition: all 3s ease-in-out;
+    }
+  }
+
+  .earth {
+    img {
+      width: 600px;
+    }
+  }
 }
+
 
 // #axis .move-down {
 //   -webkit-transform: translate(0,350px);
