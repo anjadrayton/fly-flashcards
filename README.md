@@ -26,6 +26,7 @@ Front-end
 
 # Special Features
 Students can see their progression on the home screen after completing a Topic.
+Students will see corresponding animations as they get a questions correct, incorrect and after passing or failing a deck.
 
 # Walkthrough
 Video demo coming soon
