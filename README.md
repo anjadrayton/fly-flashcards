@@ -1,6 +1,5 @@
 # Fly Flashcards
-##Open on phone for best experience
-Still a work in progress but feel free to visit the site https://flyflashcards.herokuapp.com/
+Still a work in progress but feel free to visit the site https://flyflashcards.herokuapp.com/ (please view on phone)
 
 Created by @anjadrayton, @aaronwlw and @Chaddy35 as part of @lewagon bootcamp.
 
