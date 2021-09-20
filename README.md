@@ -6,7 +6,7 @@ Test login:
 user: text@email.com
 pass: secret
 
-This project was created for students who struggle with procrastination. Our mission is to create a gamified flashcard app that makes the learning process super engaging.\
+This project was created for students who struggle with procrastination. Our mission is to create a gamified flashcard app that makes the learning process super engaging.
 
 ![Screen Shot 2021-09-20 at 3 03 29 pm](https://user-images.githubusercontent.com/83281237/133960133-10b3ebbd-b321-471a-86e8-ce933a1c39d8.png)
 
