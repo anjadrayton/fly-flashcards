@@ -36,8 +36,10 @@ Front-end
 * Tailwind
 
 # Special Features
-Students can see their progression on the home screen after completing a Topic.\
+Students can see there progress on the homescreen.
+Students will see corresponding animations as they get a questions correct, and incorrect.
 ![Rocket Animation GIF](https://media.giphy.com/media/4vdVmTKcLoFyaeACxz/giphy.gif)
+![Rocket Animation GIF](https://media.giphy.com/media/P9gDmc2M59ZWhYOx7X/giphy.gif)
 Students will see corresponding animations as they get a questions correct, incorrect and after passing or failing a deck.
 
 # Walkthrough
