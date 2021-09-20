@@ -37,6 +37,9 @@ Front-end
 
 # Special Features
 Students can see there progress on the homescreen.
+![Screen Shot 2021-09-20 at 3 03 29 pm](https://user-images.githubusercontent.com/83281237/133960133-10b3ebbd-b321-471a-86e8-ce933a1c39d8.png)
+![Screen Shot 2021-09-20 at 4 35 39 pm](https://user-images.githubusercontent.com/83281237/133964417-31eb2d64-dafd-4df2-8dbe-9bc480394965.png)
+
 Students will see corresponding animations as they get a questions correct, and incorrect.
 ![Rocket Animation GIF](https://media.giphy.com/media/4vdVmTKcLoFyaeACxz/giphy.gif)
 ![Rocket Animation GIF](https://media.giphy.com/media/P9gDmc2M59ZWhYOx7X/giphy.gif)
