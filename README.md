@@ -8,10 +8,10 @@ This project was created for students who struggle with procrastination. Our mis
 ![Screen Shot 2021-09-20 at 3 03 29 pm](https://user-images.githubusercontent.com/83281237/133960133-10b3ebbd-b321-471a-86e8-ce933a1c39d8.png)
 
 # Setup
-gh repo clone anja anjadrayton/fly-flashcards
-bundle install
+Feel free to clone our repository:
 <pre><code>gh repo clone anja anjadrayton/fly-flashcards</code></pre>
-
+You will also need Bundler installed
+<pre><code>bundle install</code></pre>
 
 # Tech/Frameworks Used
 
