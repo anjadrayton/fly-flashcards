@@ -37,7 +37,7 @@ Front-end
 
 # Special Features
 Students can see their progression on the home screen after completing a Topic.\
-<div style="width:100%;height:0;padding-bottom:178%;position:relative;"><iframe src="https://giphy.com/embed/4vdVmTKcLoFyaeACxz" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/4vdVmTKcLoFyaeACxz">via GIPHY</a></p>
+![Rocket Animation GIF](https://media.giphy.com/media/4vdVmTKcLoFyaeACxz/giphy.gif)
 Students will see corresponding animations as they get a questions correct, incorrect and after passing or failing a deck.
 
 # Walkthrough
