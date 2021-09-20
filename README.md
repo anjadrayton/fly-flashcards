@@ -2,6 +2,9 @@
 Created by @anjadrayton, @aaronwlw and @Chaddy35 as part of @lewagon bootcamp.
 
 Fly Flashcards is ptimised for mobile view https://flyflashcards.herokuapp.com/ \
+Test login:
+user: text@email.com
+pass: secret
 
 This project was created for students who struggle with procrastination. Our mission is to create a gamified flashcard app that makes the learning process super engaging.\
 
@@ -34,6 +37,7 @@ Front-end
 
 # Special Features
 Students can see their progression on the home screen after completing a Topic.\
+<div style="width:100%;height:0;padding-bottom:178%;position:relative;"><iframe src="https://giphy.com/embed/4vdVmTKcLoFyaeACxz" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/4vdVmTKcLoFyaeACxz">via GIPHY</a></p>
 Students will see corresponding animations as they get a questions correct, incorrect and after passing or failing a deck.
 
 # Walkthrough
