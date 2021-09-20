@@ -10,6 +10,7 @@ This project was created for students who struggle with procrastination. Our mis
 # Setup
 gh repo clone anja anjadrayton/fly-flashcards
 bundle install
+<pre><code>gh repo clone anja anjadrayton/fly-flashcards</code></pre>
 
 
 # Tech/Frameworks Used
@@ -34,7 +35,6 @@ Front-end
 # Special Features
 Students can see their progression on the home screen after completing a Topic.\
 Students will see corresponding animations as they get a questions correct, incorrect and after passing or failing a deck.
-<iframe src="https://giphy.com/embed/4vdVmTKcLoFyaeACxz" width="270" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/4vdVmTKcLoFyaeACxz">via GIPHY</a></p>
 
 # Walkthrough
 Video demo coming soon
