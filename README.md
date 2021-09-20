@@ -1,7 +1,11 @@
 # Fly Flashcards
-Still a work in progress but feel free to visit the site on a **phone** https://flyflashcards.herokuapp.com/ \
-\
 Created by @anjadrayton, @aaronwlw and @Chaddy35 as part of @lewagon bootcamp.
+
+Fly Flashcards is ptimised for mobile view https://flyflashcards.herokuapp.com/ \
+\
+
+![Screen Shot 2021-09-20 at 3 03 29 pm](https://user-images.githubusercontent.com/83281237/133960133-10b3ebbd-b321-471a-86e8-ce933a1c39d8.png)
+
 
 This project was created for students who struggle with procrastination. Our mission is to create a gamified flashcard app that makes the learning process super engaging.
 
