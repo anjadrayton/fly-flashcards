@@ -60,4 +60,4 @@ Students will see corresponding animations after passing or failing a deck.
 ![Rocket Animation GIF](https://media.giphy.com/media/gaduT8549gCUfiV7dP/giphy.gif?cid=790b7611663d9c30ca2a04b7e50fe0f1a209acc23309f340&rid=giphy.gif&ct=g)
 
 # Walkthrough
-Video demo coming soon
+https://youtu.be/dOQJFUByH9M?t=969
