@@ -1,7 +1,7 @@
 # Fly Flashcards
 Created by @anjadrayton, @aaronwlw and @Chaddy35 as part of @lewagon bootcamp.
 
-Fly Flashcards is ptimised for mobile view https://flyflashcards.herokuapp.com/ \
+Fly Flashcards is optimised for mobile view https://flyflashcards.herokuapp.com/ \
 Test login:
 user: text@email.com
 pass: secret
